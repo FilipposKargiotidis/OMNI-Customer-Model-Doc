@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Descriptions and responsibilities of Merchant Portal external user roles."><title>User Roles | OMNI Customer Model</title>
+  <link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
+    <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
+    <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
+      <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
+    </ul></nav>
+  </aside>
+  <button class="mobile-overlay" id="mobile-overlay" type="button" aria-label="Close navigation"></button>
+  <div class="app-main">
+    <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
+    <main class="page-content" id="page-content">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">User Roles</li></ol></nav>
+      <header class="page-intro"><span class="badge badge-yellow">Access management</span><h1>External User Roles</h1><p>Roles describe what an external user can do in Merchant Portal. Their effective access also depends on the account or organizational scope to which they are assigned.</p></header>
+      <section class="page-section"><h2>Role descriptions</h2><div class="card-grid">
+        <article class="card card-primary"><div class="card-body"><h3>Administrator</h3><p>Has broad access to Stores and application features within the assigned organizational scope. Administrators manage user accounts, have authority over financial transactions, and can create access tokens and update company name or host URL. The presentation describes assigning the same email to access multiple Companies or Stores.</p><div class="callout"><strong>Scope:</strong> The source describes administrator access at Corporation, Company and Store levels.</div></div></article>
+        <article class="card card-secondary"><div class="card-body"><h3>Finance</h3><p>Reviews and approves financial transactions, including capture, refund and cancellation under the applicable rules and policies. Finance users can access audit logs and report documents such as invoices and settlements, download documents, and create payment links.</p><div class="callout"><strong>Limitation:</strong> The presentation says Finance users cannot add or remove users.</div></div></article>
+        <article class="card card-plain"><div class="card-body"><h3>Support</h3><p>Assists customers with financial and transaction-related questions. Support users can view transactions, investigate issues, provide guidance and create payment links.</p><div class="callout"><strong>Limitations:</strong> The presentation says Support cannot add or remove users and cannot perform reversals or refunds.</div></div></article>
+        <article class="card card-primary"><div class="card-body"><h3>Technical</h3><p>Supports technical access by creating and managing access tokens and updating company name or host URL. The presentation also describes transaction administration for integration testing.</p><div class="callout"><strong>Limitation:</strong> The presentation says Technical users cannot add or remove users. Confirm the precise transaction-testing permissions before production use.</div></div></article>
+        <article class="card card-secondary"><div class="card-body"><h3>Reader</h3><p>Views transaction data and related information for analysis, without changing or administering transactions. Reader users cannot export data.</p><div class="callout"><strong>Limitations:</strong> The detailed role slide says Readers cannot add users, administer transactions, export data or directly view audit logs.</div></div></article>
+      </div></section>
+      <aside class="callout">These descriptions summarize the supplied presentation. Use the <a href="role-permission-matrix.html">Role Permission Matrix</a> alongside this page; some activities in the descriptions and matrix need reconciliation.</aside>
+    </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
+  </div>
+</body>
+</html>

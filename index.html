@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OMNI Customer Model: customer hierarchy and user access management.">
+  <title>OMNI Customer Model | Overview</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
+    <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a>
+    <div class="sidebar-caption">Merchant Portal</div>
+    <nav class="sidebar-nav" aria-label="Documentation sections">
+      <ul>
+        <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul>
+          <li class="nav-leaf"><a href="index.html">Overview</a></li>
+          <li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li>
+          <li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li>
+        </ul></li>
+        <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul>
+          <li class="nav-leaf"><a href="corporation.html">Corporation</a></li>
+          <li class="nav-leaf"><a href="company.html">Company</a></li>
+          <li class="nav-leaf"><a href="group.html">Group (optional)</a></li>
+          <li class="nav-leaf"><a href="store.html">Store</a></li>
+        </ul></li>
+        <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul>
+          <li class="nav-leaf"><a href="partner.html">Partner</a></li>
+        </ul></li>
+        <li class="nav-group"><div class="nav-group-heading">Access management</div><ul>
+          <li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li>
+          <li class="nav-leaf"><a href="user-roles.html">User roles</a></li>
+          <li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li>
+        </ul></li>
+      </ul>
+    </nav>
+  </aside>
+  <button class="mobile-overlay" id="mobile-overlay" type="button" aria-label="Close navigation"></button>
+  <div class="app-main">
+    <header class="topbar">
+      <button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button>
+      <span class="topbar-context">Documentation / OMNI Customer Model</span>
+      <label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label>
+    </header>
+    <main class="page-content" id="page-content">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Overview</li></ol></nav>
+      <header class="page-intro">
+        <span class="badge badge-yellow">Customer model</span>
+        <h1>OMNI Customer Model</h1>
+        <p><strong>Customer Hierarchy &amp; User Access Management</strong></p>
+        <p>A scalable framework for managing corporations, companies, stores and permissions across Merchant Portal.</p>
+      </header>
+      <section class="page-section">
+        <h2>Executive Summary</h2>
+        <div class="overview-cards">
+          <a class="cards" href="customer-hierarchy.html">
+            <i class="cards-icon at-hierarchy" aria-hidden="true"></i>
+            <span class="h4">Customer Hierarchy</span>
+            <div class="cards-content">Corporation → Company → Group (optional) → Store.</div>
+            <div class="cards-cta"><span>Explore the hierarchy</span><span class="arrow"></span></div>
+          </a>
+          <a class="cards" href="user-roles.html">
+            <i class="cards-icon at-account-user-flag" aria-hidden="true"></i>
+            <span class="h4">User Roles</span>
+            <div class="cards-content">Learn about Administrator, Finance, Support, Technical and Reader roles.</div>
+            <div class="cards-cta"><span>Explore user roles</span><span class="arrow"></span></div>
+          </a>
+          <a class="cards" href="role-permission-matrix.html">
+            <i class="cards-icon at-settings-shield" aria-hidden="true"></i>
+            <span class="h4">Governance</span>
+            <div class="cards-content">Review role permissions and responsibilities in the access model.</div>
+            <div class="cards-cta"><span>View permissions</span><span class="arrow"></span></div>
+          </a>
+          <a class="cards" href="why-this-matters.html">
+            <i class="cards-icon at-graph-chart" aria-hidden="true"></i>
+            <span class="h4">Scalability</span>
+            <div class="cards-content">See how the model supports different organizational structures and operational needs.</div>
+            <div class="cards-cta"><span>Why it matters</span><span class="arrow"></span></div>
+          </a>
+          <a class="cards" href="partner.html">
+            <i class="cards-icon at-accounts-group-people" aria-hidden="true"></i>
+            <span class="h4">Partner relationships</span>
+            <div class="cards-content">Understand how Partners access associated Store services without becoming the parent Company.</div>
+            <div class="cards-cta"><span>Explore Partners</span><span class="arrow"></span></div>
+          </a>
+          <a class="cards" href="store.html">
+            <i class="cards-icon at-business-briefcase" aria-hidden="true"></i>
+            <span class="h4">Services at the Store</span>
+            <div class="cards-content">See how online and in-store payment services, acquiring, Pay by Link and reports relate to Stores.</div>
+            <div class="cards-cta"><span>Explore Store services</span><span class="arrow"></span></div>
+          </a>
+        </div>
+      </section>
+      <a class="btn btn-secondary btn-sm back-to-top" href="index.html">Back to top</a>
+    </main>
+    <p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
+  </div>
+</body>
+</html>

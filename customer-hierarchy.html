@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Corporation, company and store customer hierarchy."><title>Customer Hierarchy | OMNI Customer Model</title>
+  <link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
+    <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
+    <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
+      <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
+    </ul></nav>
+  </aside>
+  <button class="mobile-overlay" id="mobile-overlay" type="button" aria-label="Close navigation"></button>
+  <div class="app-main">
+    <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
+    <main class="page-content" id="page-content">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Customer Hierarchy</li></ol></nav>
+      <header class="page-intro">
+        <span class="badge badge-yellow">Structure</span>
+        <h1>Customer Hierarchy &amp; Accounts</h1>
+        <p>The customer hierarchy contains Corporation, Company and Store accounts, with an optional Group level between Company and Store. Each account represents an entity or organizational level and provides the context for managing customer relationships and data in Merchant Portal. Payment services and agreements are associated with Store accounts, where payment activity takes place.</p>
+        <p>External users are assigned to the account level or levels that match their responsibilities, with permissions appropriate to each level. For example, a large organisation may have administrators at corporation, company and store level.</p>
+      </header>
+      <section class="page-section"><h2>Illustrative structure</h2><p class="section-lead">A corporation can contain multiple companies. A company can organize stores directly or use an optional Group to organize stores by region, brand, department or business unit. A Partner may have service relationships with Stores but is not a parent in this hierarchy.</p>
+        <div class="hierarchy" aria-label="Corporation contains companies; a company may contain groups; groups contain stores">
+          <span class="hierarchy-caption">Enterprise group</span><article class="card card-primary hierarchy-node"><header class="card-header">Corporation</header><div class="card-body">Enterprise Group</div></article>
+          <span class="hierarchy-arrow" aria-hidden="true">↓</span><span class="hierarchy-caption">Companies</span>
+          <div class="hierarchy-level"><article class="card card-secondary hierarchy-node"><header class="card-header">Company A</header></article><article class="card card-secondary hierarchy-node"><header class="card-header">Company B</header></article><article class="card card-secondary hierarchy-node"><header class="card-header">Company C</header></article></div>
+          <span class="hierarchy-arrow" aria-hidden="true">↓</span><span class="hierarchy-caption">Optional groups within a company</span>
+          <div class="hierarchy-level"><article class="card card-secondary hierarchy-node"><header class="card-header">Group: Region A</header><div class="card-body">Optional</div></article><article class="card card-secondary hierarchy-node"><header class="card-header">Group: Region B</header><div class="card-body">Optional</div></article></div>
+          <span class="hierarchy-arrow" aria-hidden="true">↓</span><span class="hierarchy-caption">Stores (or directly under Company)</span>
+          <div class="hierarchy-level"><article class="card card-plain hierarchy-node"><header class="card-header">Store 1</header></article><article class="card card-plain hierarchy-node"><header class="card-header">Store 2</header></article><article class="card card-plain hierarchy-node"><header class="card-header">Store 3</header></article><article class="card card-plain hierarchy-node"><header class="card-header">Store 4</header></article></div>
+        </div>
+        <aside class="callout">A Company may have Stores directly under it, Stores organized into Groups, or both. Payment services and agreements are associated with the Store level. <a href="store.html">Explore Store services</a>.</aside>
+      </section>
+    </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
+  </div>
+</body>
+</html>

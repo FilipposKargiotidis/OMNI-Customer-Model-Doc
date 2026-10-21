@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Permission matrix for Merchant Portal user roles."><title>Role Permission Matrix | OMNI Customer Model</title>
+  <link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
+    <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
+    <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
+      <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
+    </ul></nav>
+  </aside>
+  <button class="mobile-overlay" id="mobile-overlay" type="button" aria-label="Close navigation"></button>
+  <div class="app-main">
+    <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
+    <main class="page-content" id="page-content">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Role Permission Matrix</li></ol></nav>
+      <header class="page-intro"><span class="badge badge-yellow">Access management</span><h1>Role Permission Matrix</h1><p>This matrix shows the permissions associated with each Merchant Portal role. The permission assignments below reflect the supplied draft and should be confirmed with the relevant product and access owners.</p><p>The accompanying role descriptions include activities such as payment links for Support and transaction testing for Technical. Confirm these against the matrix before treating either page as the final permission definition.</p></header>
+      <section class="page-section" aria-labelledby="permission-matrix-title">
+        <h2 id="permission-matrix-title">Permissions by role</h2>
+        <div class="permission-table-wrap" role="region" aria-label="Role permission matrix table; scroll horizontally to see all roles" tabindex="0">
+          <table class="permission-table">
+            <thead>
+              <tr><th scope="col">Permission</th><th scope="col">Administrator</th><th scope="col">Finance</th><th scope="col">Support</th><th scope="col">Technical</th><th scope="col">Reader</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">View Transactions</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-scoped" aria-label="Access depends on assigned scope">○ Scoped</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td></tr>
+              <tr><th scope="row">Capture Payments</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">Refund Payments</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">Cancel Transactions</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">View Reports</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-scoped" aria-label="Access depends on assigned scope">○ Scoped</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td></tr>
+              <tr><th scope="row">Export Reports</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">Create Users</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">Edit Users</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">Remove Users</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">Manage Access Tokens</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">Update Company Information</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+              <tr><th scope="row">Manage Customer Hierarchy</th><td><span class="permission-status permission-status-allowed" aria-label="Allowed">✓ Yes</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td><td><span class="permission-status permission-status-denied" aria-label="Not allowed">— No</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="permission-legend" aria-label="Permission status legend">
+          <span><strong>✓ Yes</strong> — Allowed</span>
+          <span><strong>— No</strong> — Not allowed</span>
+          <span><strong>○ Scoped</strong> — Access depends on assigned scope</span>
+        </div>
+      </section>
+    </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
+  </div>
+</body>
+</html>
