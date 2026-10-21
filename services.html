@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Online and in-store channels and the services that can be associated with a Store in the OMNI Customer Model."><title>Services | OMNI Customer Model</title>
+  <link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
+    <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
+    <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
+      <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner accounts</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
+    </ul></nav>
+  </aside>
+  <button class="mobile-overlay" id="mobile-overlay" type="button" aria-label="Close navigation"></button>
+  <div class="app-main">
+    <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
+    <main class="page-content" id="page-content">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Services</li></ol></nav>
+      <header class="page-intro"><span class="badge badge-yellow">Store setup</span><h1>Channels &amp; Services</h1><p>Each Store is assigned one channel: Online or In-store. Services are then associated with that Store according to its channel, agreements and configuration. A channel describes how the Store operates; it is not itself a payment service.</p></header>
+      <section class="page-section">
+        <h2>The two Store channels</h2>
+        <p class="section-lead">Every Store has exactly one of these channels. A Store may have several compatible services within its channel.</p>
+        <div class="card-grid">
+          <article class="card card-primary"><div class="card-body"><h3>Online</h3><p>A Store that takes payments through an online customer journey, such as a website or digital checkout.</p><p>Possible services include Online PSP / Pay online and Pay by Link. Card acquiring, settlement reports and invoicing are also available for this channel.</p></div></article>
+          <article class="card card-secondary"><div class="card-body"><h3>In-store</h3><p>A Store that takes payments at a physical point of sale.</p><p>Possible services include an in-store PSP and payment terminal, APMs through QR Code, static QR codes, and TMS. Card acquiring, settlement reports and invoicing are also available for this channel.</p></div></article>
+        </div>
+        <aside class="callout">A Store has one channel, while its service setup can contain multiple services. For example, an Online Store may have both Online PSP / Pay online and card acquiring. A Store can also have card acquiring without a PSP when that matches its agreement setup.</aside>
+      </section>
+      <section class="page-section">
+        <h2>Services associated with a Store</h2>
+        <p class="section-lead">Services and agreements are associated with Stores. The color labels show which channel each service supports: Online, In-store, or both. Actual availability depends on the Store's agreements and configuration.</p>
+        <h3 class="service-group-title">Online channel</h3>
+        <div class="card-grid service-grid">
+          <article class="card service-card service-online"><div class="card-body"><span class="service-channel">Online</span><h4>Online PSP / Pay online</h4><p>Connects an Online Store's checkout to payment processing. Configured payment options may include card payments, APMs or QR Code.</p></div></article>
+          <article class="card service-card service-online"><div class="card-body"><span class="service-channel">Online</span><h4>Pay by Link</h4><p>Lets a business request or accept an online payment using a payment link. This service is for the Online channel.</p></div></article>
+        </div>
+        <h3 class="service-group-title">In-store channel</h3>
+        <div class="card-grid service-grid">
+          <article class="card service-card service-instore"><div class="card-body"><span class="service-channel">In-store</span><h4>In-store PSP / payment terminal</h4><p>Supports payment processing at a physical point of sale through a configured payment terminal. The terminal may also present a transaction-specific QR code for the customer to scan with a phone.</p></div></article>
+          <article class="card service-card service-instore"><div class="card-body"><span class="service-channel">In-store</span><h4>TMS (Terminal Management System)</h4><p>Provides capabilities for administering payment terminals associated with Stores. Depending on setup and access permissions, terminal administration may also be available from a Company account.</p></div></article>
+          <article class="card service-card service-instore"><div class="card-body"><span class="service-channel">In-store</span><h4>APM (Alternative Payment Methods)</h4><p>Additional payment methods offered alongside or instead of card payment. A PAX terminal can display a transaction QR code; the customer scans it to open Pay online and choose an available method, such as Swish or invoicing.</p></div></article>
+          <article class="card service-card service-instore"><div class="card-body"><span class="service-channel">In-store</span><h4>Static QR code</h4><p>A QR code on a sticker, restaurant table or menu opens a Pay online experience on the customer's phone. Depending on setup, they can select a payment method and complete an order and payment.</p></div></article>
+        </div>
+        <h3 class="service-group-title">Available for both channels</h3>
+        <div class="card-grid service-grid">
+          <article class="card service-card service-both"><div class="card-body"><span class="service-channel">Online + In-store</span><h4>Card acquiring agreement</h4><p>Provides the acquiring arrangement for card transactions. It can be associated with a Store with a PSP, or configured without a PSP where the agreement setup allows it.</p></div></article>
+          <article class="card service-card service-both"><div class="card-body"><span class="service-channel">Online + In-store</span><h4>Settlement reports</h4><p>Give the business reporting about payment settlement activity for the Store.</p></div></article>
+          <article class="card service-card service-both"><div class="card-body"><span class="service-channel">Online + In-store</span><h4>Invoicing</h4><p>Invoices may be available for configured PSP or acquiring services, depending on the Store's agreements.</p></div></article>
+        </div>
+      </section>
+      <section class="page-section">
+        <h2>Illustrative Store setups</h2>
+        <div class="card-grid setup-grid">
+          <article class="card hierarchy-node account-node account-store setup-card"><header class="card-header">Online Store</header><div class="card-body"><span class="setup-channel setup-online">Online channel</span><strong>Example services</strong><ul class="feature-list"><li>Online PSP / Pay online</li><li>Pay by Link</li><li>Card acquiring</li><li>Settlement reports</li></ul></div></article>
+          <article class="card hierarchy-node account-node account-store setup-card"><header class="card-header">In-store location</header><div class="card-body"><span class="setup-channel setup-instore">In-store channel</span><strong>Example services</strong><ul class="feature-list"><li>In-store PSP / payment terminal</li><li>Card acquiring</li><li>Settlement reports</li></ul></div></article>
+          <article class="card hierarchy-node account-node account-store setup-card"><header class="card-header">In-store with terminal QR and APM</header><div class="card-body"><span class="setup-channel setup-instore">In-store channel</span><strong>Example services</strong><ul class="feature-list"><li>In-store PSP / payment terminal with transaction QR code</li><li>APMs such as Swish or invoicing</li><li>Card acquiring</li><li>Settlement reports</li></ul></div></article>
+          <article class="card hierarchy-node account-node account-store setup-card"><header class="card-header">Acquiring-only setup</header><div class="card-body"><span class="setup-channel setup-instore">In-store channel</span><strong>Example services</strong><ul class="feature-list"><li>Card acquiring without a PSP</li><li>Settlement reports</li><li>Invoicing</li></ul></div></article>
+        </div>
+        <aside class="callout">These setups are illustrative, not a requirement that every Store has every service. See the <a href="customer-hierarchy.html">customer hierarchy</a> for the Store examples in context.</aside>
+      </section>
+    </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
+  </div>
+</body>
+</html>

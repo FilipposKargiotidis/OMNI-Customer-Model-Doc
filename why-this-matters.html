@@ -9,7 +9,7 @@
   <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
-      <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
@@ -21,7 +21,27 @@
     <main class="page-content" id="page-content">
       <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Why This Matters</li></ol></nav>
       <header class="page-intro"><span class="badge badge-yellow">Context</span><h1>Why This Matters</h1><p>Merchants may have complex structures and different users with different responsibilities. The model provides a scalable way to represent that structure and manage access.</p></header>
-      <section class="page-section"><h2>Challenges to address</h2><article class="card card-plain"><div class="card-body"><ul class="feature-list"><li>Complex enterprise structures</li><li>Multiple companies and stores</li><li>Different user responsibilities</li><li>Access control challenges</li><li>Need for a scalable governance model</li></ul></div></article></section>
+      <section class="page-section">
+        <h2>From complexity to clarity</h2>
+        <p class="section-lead">A clear customer model helps merchants organize their business, connect services to the right level and give users access that fits their responsibilities.</p>
+        <div class="card-grid why-grid">
+          <article class="card why-card why-corporation"><div class="card-body"><span class="why-number">01</span><h3>Complex enterprise structures</h3><p class="why-challenge">Many entities can be difficult to navigate.</p><p class="why-benefit"><strong>With the model:</strong> Corporations, Companies, optional Groups and Stores have clear places in one hierarchy.</p></div></article>
+          <article class="card why-card why-company"><div class="card-body"><span class="why-number">02</span><h3>Many companies and Stores</h3><p class="why-challenge">It can be hard to see where operations and services belong.</p><p class="why-benefit"><strong>With the model:</strong> Store-level services sit with the Store, while the organization remains easy to understand.</p></div></article>
+          <article class="card why-card why-group"><div class="card-body"><span class="why-number">03</span><h3>Different user responsibilities</h3><p class="why-challenge">Users need different views and tasks across the business.</p><p class="why-benefit"><strong>With the model:</strong> Users can be assigned to the account levels relevant to their work.</p></div></article>
+          <article class="card why-card why-store"><div class="card-body"><span class="why-number">04</span><h3>Access control challenges</h3><p class="why-challenge">Broad or unclear access can make administration harder.</p><p class="why-benefit"><strong>With the model:</strong> Account structure and roles provide a clearer basis for assigning permissions.</p></div></article>
+          <article class="card why-card why-governance"><div class="card-body"><span class="why-number">05</span><h3>Growing governance needs</h3><p class="why-challenge">A setup that works today may become harder to manage as a merchant grows.</p><p class="why-benefit"><strong>With the model:</strong> A consistent structure can support additional Companies, Groups and Stores.</p></div></article>
+        </div>
+      </section>
+      <section class="page-section why-flow-section">
+        <h2>One structure, clearer scope</h2>
+        <div class="why-flow" aria-label="Corporation contains Companies, which may contain optional Groups and Stores">
+          <span class="why-flow-node why-corporation">Corporation</span><span class="why-flow-arrow" aria-hidden="true">→</span>
+          <span class="why-flow-node why-company">Company</span><span class="why-flow-arrow" aria-hidden="true">→</span>
+          <span class="why-flow-node why-group">Group (optional)</span><span class="why-flow-arrow" aria-hidden="true">→</span>
+          <span class="why-flow-node why-store">Store &amp; services</span>
+        </div>
+        <aside class="callout">The hierarchy organizes the merchant. Roles and permissions determine what each user can do within their assigned scope. <a href="customer-hierarchy.html">Explore the customer hierarchy</a> or <a href="access-inheritance.html">learn about access inheritance</a>.</aside>
+      </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>
   <script src="site.js" defer></script>
