@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EcomCorp Access groups in the OMNI Customer Model."><title>EcomCorp Access groups | OMNI Customer Model</title>
+  <link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
+    <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
+    <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
+      <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
+    </ul></nav>
+  </aside>
+  <button class="mobile-overlay" id="mobile-overlay" type="button" aria-label="Close navigation"></button>
+  <div class="app-main">
+    <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
+    <main class="page-content" id="page-content">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">EcomCorp Access groups</li></ol></nav>
+      <header class="page-intro"><span class="badge badge-yellow">Partner &amp; Access Groups</span><h1>EcomCorp Access groups</h1><p>EcomCorp is an existing access-group model used to bring online Stores together across different Companies. It gives assigned Partner users a way to carry out transaction operations across those Stores, while access to reporting, invoices and user administration remains limited.</p></header>
+      <section class="page-section">
+        <h2>One operating group, multiple legal entities</h2>
+        <p class="section-lead">EcomCorp groups Stores for operational access; it does not replace the Company accounts that own them in the current customer hierarchy.</p>
+        <div class="ecomcorp-flow" aria-label="An operator accesses an EcomCorp group of online Stores, each Store remaining under its own Company">
+          <article class="ecomcorp-flow-card ecomcorp-operator"><span class="ecomcorp-kicker">USER ACCESS</span><h3>Partner user</h3><p>Added to the access group to operate transactions for its assigned Stores.</p></article>
+          <span class="ecomcorp-arrow" aria-hidden="true">→</span>
+          <article class="ecomcorp-flow-card ecomcorp-group"><span class="ecomcorp-kicker">CROSS-COMPANY GROUP</span><h3>EcomCorp</h3><p>Collects related online Stores together, often for a Partner's operations.</p></article>
+          <span class="ecomcorp-arrow" aria-hidden="true">→</span>
+          <article class="ecomcorp-flow-card ecomcorp-stores"><span class="ecomcorp-kicker">CURRENT CUSTOMER HIERARCHY</span><h3>Online Stores</h3><p>Each Store remains under its own Company account and legal entity.</p></article>
+        </div>
+        <aside class="callout">A Company account remains the Store's parent even when it has no users assigned. EcomCorp is a separate grouping and access mechanism, not a substitute parent account.</aside>
+      </section>
+      <section class="page-section">
+        <h2>Why this group exists</h2>
+        <div class="ecomcorp-history-grid">
+          <article class="ecomcorp-history-card ecomcorp-history-legacy"><span class="ecomcorp-kicker">BEFORE · LEGACY STRUCTURE</span><h3>Operational grouping followed the old Corporation concept</h3><p>Online Stores could be grouped under the former Corporation concept even when they belonged to different legal entities. In some cases, the parent account belonged to a Partner, and Stores did not yet have their own Company parent accounts.</p></article>
+          <article class="ecomcorp-history-card ecomcorp-history-current"><span class="ecomcorp-kicker">TODAY · CUSTOMER HIERARCHY</span><h3>Every Store has its own Company parent</h3><p>The current model places each Store under its own Company account, whether or not that Company has users. EcomCorp can still group selected online Stores across Companies so Partner users can work across them.</p></article>
+        </div>
+        <p class="ecomcorp-usage-note">In current usage, around 90% of EcomCorp groups are used in Partner relationships; some are also used under Corporations and other setups.</p>
+      </section>
+      <section class="page-section">
+        <h2>What access does an EcomCorp group provide?</h2>
+        <p class="section-lead">The access is useful for transaction operations across the grouped Stores, but it is not equivalent to full Company or Store account administration.</p>
+        <div class="ecomcorp-capability-grid">
+          <article class="ecomcorp-capability ecomcorp-capability-available"><span class="ecomcorp-capability-state">Available through the group</span><h3>Transaction operations</h3><p>Assigned Partner users can perform transaction operations for the Stores included in their EcomCorp group.</p></article>
+          <article class="ecomcorp-capability ecomcorp-capability-limited"><span class="ecomcorp-capability-state">Limited / not available</span><h3>Settlement reports</h3><p>Settlement reports are not available to Partner users through EcomCorp group access.</p></article>
+          <article class="ecomcorp-capability ecomcorp-capability-limited"><span class="ecomcorp-capability-state">Limited / not available</span><h3>Invoices</h3><p>Invoice access is not available to Partner users through EcomCorp group access.</p></article>
+          <article class="ecomcorp-capability ecomcorp-capability-limited"><span class="ecomcorp-capability-state">Limited</span><h3>User administration</h3><p>Managing users for the underlying Stores is limited from the access group; it does not provide full Store-level user administration.</p></article>
+        </div>
+        <aside class="callout">EcomCorp access is scoped to the Stores in the group. It does not by itself grant access to all data or administration capabilities on each Store's Company account.</aside>
+      </section>
+      <section class="page-section">
+        <h2>Keep the two models distinct</h2>
+        <div class="card-grid ecomcorp-links">
+          <article class="card ecomcorp-link-card"><div class="card-body"><h3>Customer hierarchy</h3><p>See how Corporation, Company, Store Group and Store accounts relate—and why each Store has a Company parent.</p><a href="customer-hierarchy.html">Explore the customer hierarchy</a></div></article>
+          <article class="card ecomcorp-link-card"><div class="card-body"><h3>Partner accounts</h3><p>Learn how Partner accounts, subtypes and other access mechanisms shape Partner user access.</p><a href="partner.html">Explore Partner accounts</a></div></article>
+        </div>
+      </section>
+    </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
+  </div>
+</body>
+</html>

@@ -10,8 +10,8 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
   </aside>
@@ -23,16 +23,16 @@
       <header class="page-intro">
         <span class="badge badge-yellow">Structure</span>
         <h1>Customer Hierarchy &amp; Accounts</h1>
-        <p>The customer hierarchy contains Corporation, Company and Store accounts, with an optional Group level between Company and Store. Each account represents an entity or organizational level and provides the context for managing customer relationships and data in Merchant Portal. Payment services and agreements are associated with Store accounts, where payment activity takes place.</p>
+        <p>The customer hierarchy contains Corporation, Company and Store accounts, with an optional Store Group level between Company and Store. Each account represents an entity or organizational level and provides the context for managing customer relationships and data in Merchant Portal. Payment services and agreements are associated with Store accounts, where payment activity takes place.</p>
         <p>External users are assigned to the account level or levels that match their responsibilities, with permissions appropriate to each level. For example, a large organisation may have administrators at corporation, company and store level.</p>
       </header>
-      <section class="page-section"><h2>Illustrative structure</h2><p class="section-lead">A corporation can contain multiple companies. A company can organize stores directly or use an optional Group to organize stores by region, brand, department or business unit. A Partner may have service relationships with Stores but is not a parent in this hierarchy.</p>
-        <div class="hierarchy" aria-label="Corporation contains companies; a company may contain groups; groups contain stores">
+      <section class="page-section"><h2>Illustrative structure</h2><p class="section-lead">A corporation can contain multiple companies. A company can organize stores directly or use an optional Store Group to organize stores by region, brand, department or business unit. A Partner may have service relationships with Stores but is not a parent in this hierarchy.</p>
+        <div class="hierarchy" aria-label="Corporation contains companies; a company may contain Store Groups; Store Groups contain Stores">
           <span class="hierarchy-caption">Enterprise group</span><article class="card hierarchy-node account-node account-corporation"><header class="card-header">Corporation</header><div class="card-body">Enterprise Group</div></article>
           <span class="hierarchy-arrow" aria-hidden="true">↓</span><span class="hierarchy-caption">Companies</span>
           <div class="hierarchy-level"><article class="card hierarchy-node account-node account-company"><header class="card-header">Company A</header><div class="card-body">Operating company</div></article><article class="card hierarchy-node account-node account-company"><header class="card-header">Company B</header><div class="card-body">Operating company</div></article><article class="card hierarchy-node account-node account-company"><header class="card-header">Company C</header><div class="card-body">Operating company</div></article></div>
-          <span class="hierarchy-arrow" aria-hidden="true">↓</span><span class="hierarchy-caption">Optional groups within a company</span>
-          <div class="hierarchy-level"><article class="card hierarchy-node account-node account-group"><header class="card-header">Group: Region A</header><div class="card-body">Optional</div></article><article class="card hierarchy-node account-node account-group"><header class="card-header">Group: Region B</header><div class="card-body">Optional</div></article></div>
+          <span class="hierarchy-arrow" aria-hidden="true">↓</span><span class="hierarchy-caption">Optional Store Groups within a company</span>
+          <div class="hierarchy-level"><article class="card hierarchy-node account-node account-group"><header class="card-header">Store Group: Region A</header><div class="card-body">Optional</div></article><article class="card hierarchy-node account-node account-group"><header class="card-header">Store Group: Region B</header><div class="card-body">Optional</div></article></div>
           <span class="hierarchy-arrow" aria-hidden="true">↓</span><span class="hierarchy-caption">Stores (or directly under Company)</span>
           <div class="hierarchy-level hierarchy-stores">
             <article class="card hierarchy-node account-node account-store"><header class="card-header">Store 1 — Online channel</header><div class="card-body"><strong>Example services:</strong><ul class="feature-list"><li>Online PSP / Pay online</li><li>Card acquiring agreement</li><li>Pay by Link and settlement reports</li></ul></div></article>
@@ -41,7 +41,7 @@
             <article class="card hierarchy-node account-node account-store"><header class="card-header">Store 4 — In-store channel</header><div class="card-body"><strong>Example services:</strong><ul class="feature-list"><li>Card acquiring agreement (without a PSP)</li><li>Settlement reports</li><li>Invoicing service</li></ul></div></article>
           </div>
         </div>
-        <aside class="callout">Each Store has one channel—Online or In-store—and may have a combination of services that fits its agreements and configuration. A Company may have Stores directly under it, Stores organized into Groups, or both. <a href="services.html">Explore channels and services</a>.</aside>
+        <aside class="callout">Each Store has one channel—Online or In-store—and may have a combination of services that fits its agreements and configuration. A Company may have Stores directly under it, Stores organized into Store Groups, or both. <a href="services.html">Explore channels and services</a>.</aside>
       </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>

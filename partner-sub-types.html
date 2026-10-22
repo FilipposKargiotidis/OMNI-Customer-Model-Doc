@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Partner sub-types in the OMNI Customer Model."><title>Partner Sub types | OMNI Customer Model</title>
+  <meta name="description" content="Current and conceptual Partner subtypes in the OMNI Customer Model."><title>Partner Sub types | OMNI Customer Model</title>
   <link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
 </head>
 <body>
@@ -10,8 +10,8 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Partner accounts</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html" aria-current="page">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
   </aside>
@@ -19,10 +19,62 @@
   <div class="app-main">
     <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
     <main class="page-content" id="page-content">
-      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Partner Sub types</li></ol></nav>
-      <header class="page-intro"><span class="badge badge-yellow">Partner model</span><h1>Partner Sub types</h1><p>A Partner is an entity with which there is a Partner Agreement. Partners can have commercial, technical or administrative access to services associated with company Stores.</p></header>
-      <section class="page-section"><h2>Partner relationships</h2><article class="card card-primary"><div class="card-body"><ul class="feature-list"><li>Partner sub-types or groups define the Partner's relationship with company Stores.</li><li>Commercial access may include creating and viewing agreements; technical or administrative access depends on the Partner relationship.</li><li>A Partner can be associated with multiple Stores across different Companies.</li><li>The Partner can access the relevant Store services, but does not receive Company-level access through that relationship.</li><li>The Company remains the legal entity and the parent of its Stores.</li></ul></div></article></section>
-      <aside class="callout">A Partner relationship connects services; it does not make the Partner the parent of the associated Stores.</aside>
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li><a href="partner.html">Partner accounts</a></li><li aria-current="page">Partner Sub types</li></ol></nav>
+      <header class="page-intro"><span class="badge badge-yellow">Partner model</span><h1>Partner Sub types</h1><p>Subtypes describe different kinds of Partner relationships and can shape access to associated customer accounts. The subtype model is still taking shape: Executive is the only subtype currently created, while the others below are concepts.</p></header>
+      <section class="page-section">
+        <h2>How subtypes fit into Partner access</h2>
+        <p class="section-lead">A Partner user gets access to Sales Portal when added to the Partner account. Access to associated Stores is separate and requires an additional access group or the Executive subtype.</p>
+        <div class="partner-subtype-flow" aria-label="Partner account access provides Sales Portal; Store access needs an additional access group or Executive subtype">
+          <article class="partner-subtype-step partner-entity"><span class="partner-step">1 · PARTNER ACCOUNT</span><h3>Self Account</h3><p>Partner account access provides the Sales Portal experience.</p><span class="partner-status partner-status-current">Available now</span></article>
+          <span class="partner-flow-arrow" aria-hidden="true">→</span>
+          <article class="partner-subtype-step partner-subtype"><span class="partner-step">2 · ADDITIONAL ACCESS</span><h3>Partner Access</h3><p>Access to associated Companies and Stores is a separate area and is still being developed.</p><span class="partner-status partner-status-concept">In development</span></article>
+          <span class="partner-flow-arrow" aria-hidden="true">→</span>
+          <article class="partner-subtype-step partner-access-group"><span class="partner-step">3 · STORE ACCESS</span><h3>Subtype or access group</h3><p>Today, Store access requires an access group or the Executive subtype.</p><span class="partner-status partner-status-current">Executive created</span></article>
+        </div>
+        <aside class="callout">Being added to the Partner account alone does not grant access to associated Stores. The wider Partner Access model and its detailed permissions are not yet complete.</aside>
+      </section>
+      <section class="page-section">
+        <h2>Subtype catalogue</h2>
+        <p class="section-lead">The cards distinguish what exists from ideas for how different Partner relationships could be described. Concept cards explain possible intent only; they do not define implemented permissions.</p>
+        <div class="partner-subtype-grid">
+          <article class="partner-subtype-card partner-subtype-current partner-subtype-feature">
+            <div class="partner-subtype-card-top"><span class="partner-subtype-symbol" aria-hidden="true">EX</span><span class="partner-status partner-status-current">Currently created</span></div>
+            <span class="partner-step">AVAILABLE SUBTYPE</span><h3>Executive</h3>
+            <p>The only Partner subtype currently created. Executive gives a Partner broad access to the payments and services of the Companies connected to it.</p>
+            <p>With this subtype, Partner users can manage those customers at both Company and Store level, including the relevant payment and service setup for Stores under the connected Companies.</p>
+            <p class="partner-subtype-boundary"><strong>Access scope:</strong> Applies to the Companies connected under the Executive Partner relationship and their Stores. It does not make the Partner a parent in the customer hierarchy.</p>
+          </article>
+          <article class="partner-subtype-card partner-subtype-platform">
+            <div class="partner-subtype-card-top"><span class="partner-subtype-symbol" aria-hidden="true">PL</span><span class="partner-status partner-status-concept">Concept</span></div>
+            <span class="partner-step">POSSIBLE PARTNER ROLE</span><h3>Platform</h3>
+            <p>A platform Partner could have different levels of OMNI access, depending on agreements with Swedbank Pay and the merchant. The concept ranges from viewing merchant data to managing it, while keeping merchant agreements and settlements with Swedbank Pay outside the Partner's direct access.</p>
+          </article>
+          <article class="partner-subtype-card partner-subtype-integration">
+            <div class="partner-subtype-card-top"><span class="partner-subtype-symbol" aria-hidden="true">IN</span><span class="partner-status partner-status-concept">Concept</span></div>
+            <span class="partner-step">POSSIBLE PARTNER ROLE</span><h3>Integration</h3>
+            <p>An Integration Partner could work across Sales Portal and OMNI, with a focus on merchant agreements and transaction visibility. Compared with the Platform concept, its access would be narrower and would not include operational management.</p>
+          </article>
+          <article class="partner-subtype-card partner-subtype-technical">
+            <div class="partner-subtype-card-top"><span class="partner-subtype-symbol" aria-hidden="true">TE</span><span class="partner-status partner-status-concept">Concept</span></div>
+            <span class="partner-step">POSSIBLE PARTNER ROLE</span><h3>Technical</h3>
+            <p>A Technical Partner could support the integration phase, including creating or viewing agreements and managing access tokens for online payments. The concept limits access to transactions and ends the Partner's involvement once integration is complete.</p>
+          </article>
+          <article class="partner-subtype-card partner-subtype-referral">
+            <div class="partner-subtype-card-top"><span class="partner-subtype-symbol" aria-hidden="true">RE</span><span class="partner-status partner-status-concept">Concept</span></div>
+            <span class="partner-step">POSSIBLE PARTNER ROLE</span><h3>Referral</h3>
+            <p>A Referral Partner could focus on introducing merchants and managing sales agreements. The concept excludes merchant data and transaction access, as well as technical support or operational management.</p>
+          </article>
+        </div>
+        <aside class="callout">Platform, Integration, Technical and Referral are concepts only—not available subtypes or confirmed access rules. A Partner may have more than one subtype, though this is expected to be uncommon.</aside>
+      </section>
+      <section class="page-section">
+        <h2>Subtype is not the whole permission model</h2>
+        <div class="card-grid partner-permission-grid">
+          <article class="card partner-detail-card partner-subtype"><div class="card-body"><h3>Subtype</h3><p>Describes the kind of Partner relationship. Only Executive has been created so far.</p></div></article>
+          <article class="card partner-detail-card partner-access-group"><div class="card-body"><h3>Access group</h3><p>Can provide an additional route to Store access. The broader Partner Access setup is still being developed.</p></div></article>
+        </div>
+        <p class="partner-subtype-footnote">Do not infer exact permissions from a subtype name. Access depends on what is configured and enabled for the Partner.</p>
+      </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>
 </body>

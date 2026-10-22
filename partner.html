@@ -10,8 +10,8 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Partner accounts</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
   </aside>
@@ -19,10 +19,58 @@
   <div class="app-main">
     <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
     <main class="page-content" id="page-content">
-      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Partner</li></ol></nav>
-      <header class="page-intro"><span class="badge badge-yellow">Partner model</span><h1>Partner</h1><p>A Partner is an entity with which there is a Partner Agreement. Partners can have commercial, technical or administrative access to services associated with company Stores.</p></header>
-      <section class="page-section"><h2>Partner relationships</h2><article class="card card-primary"><div class="card-body"><ul class="feature-list"><li>Partner sub-types or groups define the Partner's relationship with company Stores.</li><li>Commercial access may include creating and viewing agreements; technical or administrative access depends on the Partner relationship.</li><li>A Partner can be associated with multiple Stores across different Companies.</li><li>The Partner can access the relevant Store services, but does not receive Company-level access through that relationship.</li><li>The Company remains the legal entity and the parent of its Stores.</li></ul></div></article></section>
-      <aside class="callout">A Partner relationship connects services; it does not make the Partner the parent of the associated Stores.</aside>
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Partner accounts</li></ol></nav>
+      <header class="page-intro"><span class="badge badge-yellow">Partner model</span><h1>Partner accounts</h1><p>A Partner is an entity that has a Partner Agreement with Swedbank Pay. Partners can work with one or more Companies, with access shaped by the Partner's assigned subtype and access groups.</p></header>
+      <section class="page-section">
+        <h2>How a Partner fits</h2>
+        <p class="section-lead">A Partner relationship connects a Partner to the Companies it serves. It does not make the Partner a parent account in the merchant's Corporation–Company–Store hierarchy.</p>
+        <div class="partner-flow" aria-label="A Partner Agreement connects one Partner to one or more Companies and their relevant services">
+          <article class="partner-flow-card partner-entity"><span class="partner-step">PARTNER ACCOUNT</span><h3>Partner</h3><p>An entity with a Partner Agreement.</p></article>
+          <span class="partner-flow-arrow" aria-hidden="true">→</span>
+          <article class="partner-flow-card partner-agreement"><span class="partner-step">COMMERCIAL LINK</span><h3>Partner Agreement</h3><p>Defines the business relationship with Swedbank Pay.</p></article>
+          <span class="partner-flow-arrow" aria-hidden="true">→</span>
+          <article class="partner-flow-card partner-company"><span class="partner-step">CUSTOMERS SERVED</span><h3>One or more Companies</h3><p>The Partner may be associated with multiple Companies.</p></article>
+        </div>
+        <aside class="callout">The Company remains the legal entity and the parent of its Stores. A Partner's relationship grants only the access defined for that Partner; it does not automatically grant Company-level access.</aside>
+      </section>
+      <section class="page-section">
+        <h2>Partner users and access areas</h2>
+        <p class="section-lead">Partner users have a Self Account area and a separate Partner Access area for associated Companies and Stores. The Self Account experience is available today; the Partner Access model is still being developed.</p>
+        <div class="partner-access-areas">
+          <article class="partner-area-card partner-entity">
+            <span class="partner-status partner-status-current">Available now</span>
+            <span class="partner-step">SELF ACCOUNT</span>
+            <h3>Partner account and Sales Portal</h3>
+            <p>Adding a user to the Partner account gives them access to Sales Portal. This is the Partner's own account area.</p>
+          </article>
+          <article class="partner-area-card partner-company">
+            <span class="partner-status partner-status-concept">In development</span>
+            <span class="partner-step">PARTNER ACCESS</span>
+            <h3>Associated Companies and Stores</h3>
+            <p>A separate area for working with associated customer accounts and Stores. This access model is not yet fully developed.</p>
+          </article>
+        </div>
+        <article class="partner-sales-card">
+          <div class="partner-sales-heading"><span class="partner-sales-mark" aria-hidden="true">SP</span><div><span class="partner-step">PARTNER-FACING OFFERING</span><h3>Sales Portal</h3></div></div>
+          <p>Sales Portal is Swedbank Pay's offering for Partners to create product agreements and distribute them to their customers.</p>
+          <p class="partner-sales-note"><strong>Important:</strong> Sales Portal access does not mean every Partner can create or distribute agreements. Those capabilities depend on the Partner's enabled permissions and configuration.</p>
+        </article>
+        <aside class="callout"><strong>Store access today:</strong> Partner account access gives Sales Portal, but does not by itself give access to associated Stores. Store access requires an additional access group or the Executive subtype, which is the only Partner subtype currently created.</aside>
+        <div class="card-grid partner-access-grid">
+          <article class="card partner-detail-card partner-entity"><div class="card-body"><span class="partner-status partner-status-current">Available now</span><h3>Partner account access</h3><p>Assigning a user to the Partner account provides access to Sales Portal.</p></div></article>
+          <article class="card partner-detail-card partner-subtype"><div class="card-body"><span class="partner-status partner-status-mixed">One created; others concepts</span><h3>Partner subtypes</h3><p>Executive is the only subtype currently created. It gives broad access to connected Companies’ payments and services and supports management at Company and Store level. Other subtype ideas are concepts. <a href="partner-sub-types.html">Explore Partner subtypes</a>.</p></div></article>
+          <article class="card partner-detail-card partner-access-group"><div class="card-body"><span class="partner-status partner-status-concept">Still being shaped</span><h3>Access groups</h3><p>An additional access group can be used for Store access. The broader Partner Access model is not yet fully developed. See the <a href="Ecom-Corp-Access-groups.html">EcomCorp</a> and <a href="IMS-GroupAccess-groups.html">ImsGroup</a> pages.</p></div></article>
+        </div>
+      </section>
+      <section class="page-section">
+        <h2>Different Partners, different permissions</h2>
+        <div class="card-grid partner-permission-grid">
+          <article class="card partner-detail-card partner-subtype"><div class="card-body"><h3>Commercial</h3><p>Depending on the assigned subtype and permissions, this may include creating or viewing agreements.</p></div></article>
+          <article class="card partner-detail-card partner-entity"><div class="card-body"><h3>Technical</h3><p>May provide technical permissions for the Companies associated with the Partner.</p></div></article>
+          <article class="card partner-detail-card partner-access-group"><div class="card-body"><h3>Administrative</h3><p>May provide payment-administration or other operational permissions when configured.</p></div></article>
+        </div>
+        <aside class="callout">These are examples of access types, not a guarantee that every Partner has these capabilities. The actual access depends on the Partner's subtype, assigned access groups and permissions.</aside>
+      </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>
 </body>

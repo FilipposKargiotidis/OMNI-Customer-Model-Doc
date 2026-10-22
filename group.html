@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Optional Group level in the OMNI Customer Model."><title>Group | OMNI Customer Model</title>
+  <meta name="description" content="Optional Store Group level in the OMNI Customer Model."><title>Store Group | OMNI Customer Model</title>
   <link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
 </head>
 <body>
@@ -10,8 +10,8 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
   </aside>
@@ -19,10 +19,31 @@
   <div class="app-main">
     <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
     <main class="page-content" id="page-content">
-      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Group</li></ol></nav>
-      <header class="page-intro"><span class="badge badge-yellow">Optional customer level</span><h1>Group</h1><p>A Group is an optional level between a Company and its Stores. It helps a Company organize Stores into logical units without creating additional legal entities.</p></header>
-      <section class="page-section"><h2>How Groups are used</h2><article class="card card-secondary"><div class="card-body"><ul class="feature-list"><li>Organize Stores by region, department, brand or business division.</li><li>Keep the Company as the legal entity and parent of its Stores.</li><li>Assign Group users and permissions for access to Stores in that Group.</li><li>Use Groups only when an organization needs this additional structure; Stores can also sit directly under a Company.</li></ul></div></article></section>
-      <aside class="callout">A Group is an organizational grouping, not a separate legal entity.</aside>
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Store Group</li></ol></nav>
+      <header class="page-intro"><span class="badge badge-yellow">Optional customer level</span><h1>Store Group</h1><p>A Store Group is an optional organizational level between a Company and its Stores. It lets a Company arrange Stores into meaningful sets without creating another legal entity or changing the Company's ownership of the business.</p></header>
+      <section class="page-section">
+        <h2>Where Store Group fits</h2>
+        <p class="section-lead">Use a Store Group when a Company needs another way to organize Stores—for example, by region, brand, department or business unit. If that extra structure is not needed, Stores can sit directly under the Company.</p>
+        <nav class="account-path" aria-label="Store Group's position in the customer hierarchy">
+          <a class="account-path-node account-corporation" href="corporation.html">Corporation</a><span class="account-path-arrow" aria-hidden="true">→</span><a class="account-path-node account-company" href="company.html">Company</a><span class="account-path-arrow" aria-hidden="true">→</span><span class="account-path-node account-group is-current" aria-current="page">Store Group <small>(optional)</small></span><span class="account-path-arrow" aria-hidden="true">→</span><a class="account-path-node account-store" href="store.html">Store</a>
+        </nav>
+      </section>
+      <section class="page-section">
+        <h2>Users and access</h2>
+        <p class="section-lead">A Store Group is an account where users can be added when needed. Store Group-level access can be scoped to the Stores organized within that Store Group.</p>
+        <article class="account-scope-card account-group"><div class="account-scope-heading"><span class="account-scope-icon" aria-hidden="true">SG</span><div><strong>Store Group-level user</strong><span>Potential scope: this Store Group and its Stores</span></div></div><p>Store Group access does not automatically include other Store Groups or the whole Company. The user's assigned role and permissions determine what they can do.</p></article>
+        <p class="account-access-links"><a href="access-inheritance.html">Learn about access inheritance</a> · <a href="user-roles.html">Explore user roles</a></p>
+      </section>
+      <section class="page-section">
+        <h2>How Store Groups are used</h2>
+        <div class="card-grid account-facts-grid">
+          <article class="card account-detail-card account-group"><div class="card-body"><h3>Organize Stores</h3><p>Collect Stores into logical units such as regions, brands, departments or business divisions.</p></div></article>
+          <article class="card account-detail-card account-group"><div class="card-body"><h3>Support scoped access</h3><p>Store Group users and permissions can provide access to Stores in that Store Group, according to assigned roles.</p></div></article>
+          <article class="card account-detail-card account-group"><div class="card-body"><h3>Keep Company ownership clear</h3><p>The Company remains the legal entity and parent; the Store Group is an organizational layer, not a separate legal entity.</p></div></article>
+          <article class="card account-detail-card account-group"><div class="card-body"><h3>Stay optional</h3><p>Use Store Groups only when they add useful structure. A Company can also manage Stores directly.</p></div></article>
+        </div>
+        <aside class="callout">A Store Group organizes Stores; it does not own payment services. Those remain associated with each <a href="store.html">Store</a>.</aside>
+      </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>
 </body>

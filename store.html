@@ -10,8 +10,8 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
   </aside>
@@ -20,10 +20,27 @@
     <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
     <main class="page-content" id="page-content">
       <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Store &amp; Services</li></ol></nav>
-      <header class="page-intro"><span class="badge badge-yellow">Customer account 3</span><h1>Store &amp; Services</h1><p>The Store is the lowest customer level and the operational point where payments happen, whether in a physical location or online. Payment products, service agreements and related operational services are associated with Store accounts—not with Corporation, Company or Group accounts.</p></header>
+      <header class="page-intro"><span class="badge badge-yellow">Customer account 3</span><h1>Store &amp; Services</h1><p>The Store is the operational endpoint of the customer hierarchy and the level where payment activity takes place. Every Store has one channel—Online or In-store—and can be associated with the services and agreements that fit its setup.</p></header>
+      <section class="page-section">
+        <h2>Where Store fits</h2>
+        <p class="section-lead">A Store belongs to a Company, either directly or through an optional Store Group. The Store is where the chosen channel, payment services and operational activity come together.</p>
+        <nav class="account-path" aria-label="Store's position in the customer hierarchy">
+          <a class="account-path-node account-corporation" href="corporation.html">Corporation</a><span class="account-path-arrow" aria-hidden="true">→</span><a class="account-path-node account-company" href="company.html">Company</a><span class="account-path-arrow" aria-hidden="true">→</span><a class="account-path-node account-group" href="group.html">Store Group <small>(optional)</small></a><span class="account-path-arrow" aria-hidden="true">→</span><span class="account-path-node account-store is-current" aria-current="page">Store</span>
+        </nav>
+      </section>
+      <section class="page-section">
+        <h2>Users and access</h2>
+        <p class="section-lead">A Store is an account where users can be added when needed. Store-level access is scoped to that specific Store.</p>
+        <article class="account-scope-card account-store"><div class="account-scope-heading"><span class="account-scope-icon" aria-hidden="true">S</span><div><strong>Store-level user</strong><span>Potential scope: this Store only</span></div></div><p>Access to other Stores or higher account levels is not automatically included. The user's assigned role and permissions determine what they can do within this Store.</p></article>
+        <p class="account-access-links"><a href="access-inheritance.html">Learn about access inheritance</a> · <a href="user-roles.html">Explore user roles</a></p>
+      </section>
       <section class="page-section">
         <h2>Store characteristics</h2>
-        <article class="card card-plain"><div class="card-body"><ul class="feature-list"><li>Represents a physical or digital store, such as an in-store or online channel.</li><li>Is where transactions take place.</li><li>Can be connected to the services and agreements needed for that store's payment operations.</li></ul></div></article>
+        <div class="card-grid account-facts-grid">
+          <article class="card account-detail-card account-store"><div class="card-body"><h3>One channel per Store</h3><p>Each Store is assigned either the Online channel or the In-store channel.</p></div></article>
+          <article class="card account-detail-card account-store"><div class="card-body"><h3>Where payments happen</h3><p>Represents a physical or digital point of sale where customer transactions take place.</p></div></article>
+          <article class="card account-detail-card account-store"><div class="card-body"><h3>Services at Store level</h3><p>Payment services, agreements and related operational services are associated with the Store—not the Corporation, Company or Store Group.</p></div></article>
+        </div>
       </section>
       <section class="page-section">
         <h2>Services associated with a Store</h2>
@@ -36,7 +53,7 @@
       </section>
       <section class="page-section">
         <h2>Relationship to the customer hierarchy</h2>
-        <article class="card card-plain"><div class="card-body"><p>Corporation, Company and optional Group accounts organize the business and provide user-access scope. Store accounts are where payment services are connected and transactions occur. A Group may organize access to multiple Stores, but it does not hold those Store-level services itself.</p><p><a href="customer-hierarchy.html">See the customer hierarchy</a> or <a href="access-inheritance.html">read about access inheritance</a>.</p></div></article>
+        <article class="card card-plain"><div class="card-body"><p>Corporation, Company and optional Store Group accounts organize the business and provide user-access scope. Store accounts are where payment services are connected and transactions occur. A Store Group may organize access to multiple Stores, but it does not hold those Store-level services itself.</p><p><a href="customer-hierarchy.html">See the customer hierarchy</a> or <a href="access-inheritance.html">read about access inheritance</a>.</p></div></article>
       </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>

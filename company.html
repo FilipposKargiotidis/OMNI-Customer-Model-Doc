@@ -10,8 +10,8 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Partner model</div><ul><li class="nav-leaf"><a href="partner.html">Partner</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
   </aside>
@@ -20,8 +20,30 @@
     <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
     <main class="page-content" id="page-content">
       <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Company</li></ol></nav>
-      <header class="page-intro"><span class="badge badge-yellow">Customer account 2</span><h1>Company</h1><p>The company represents a commercial and operational level within the customer hierarchy.</p></header>
-      <section class="page-section"><h2>Company responsibilities</h2><article class="card card-secondary"><div class="card-body"><ul class="feature-list"><li>Agreement owner</li><li>Receives payouts</li><li>Operational responsibility</li><li>One or multiple Stores</li><li>May organize Stores directly or through optional Groups</li></ul></div></article></section>
+      <header class="page-intro"><span class="badge badge-yellow">Customer account 2</span><h1>Company</h1><p>The Company is the commercial and operational entity beneath a Corporation in the customer hierarchy. It is the agreement owner and receives payouts, and it organizes the Stores where payment activity takes place.</p></header>
+      <section class="page-section">
+        <h2>Where Company fits</h2>
+        <p class="section-lead">A Company may organize its Stores directly or use optional Store Groups to arrange them by region, brand, department or business unit. Store Groups do not replace the Company as the legal entity or parent.</p>
+        <nav class="account-path" aria-label="Company's position in the customer hierarchy">
+          <a class="account-path-node account-corporation" href="corporation.html">Corporation</a><span class="account-path-arrow" aria-hidden="true">→</span><span class="account-path-node account-company is-current" aria-current="page">Company</span><span class="account-path-arrow" aria-hidden="true">→</span><a class="account-path-node account-group" href="group.html">Store Group <small>(optional)</small></a><span class="account-path-arrow" aria-hidden="true">→</span><a class="account-path-node account-store" href="store.html">Store</a>
+        </nav>
+      </section>
+      <section class="page-section">
+        <h2>Users and access</h2>
+        <p class="section-lead">A Company is an account where users can be added when needed. A user assigned at this level can be given access to that Company and the levels below it.</p>
+        <article class="account-scope-card account-company"><div class="account-scope-heading"><span class="account-scope-icon" aria-hidden="true">Co</span><div><strong>Company-level user</strong><span>Potential scope: this Company, its Store Groups and its Stores</span></div></div><p>This scope does not automatically include the Corporation or other Companies. The user's assigned role and permissions determine what they can do.</p></article>
+        <p class="account-access-links"><a href="access-inheritance.html">Learn about access inheritance</a> · <a href="user-roles.html">Explore user roles</a></p>
+      </section>
+      <section class="page-section">
+        <h2>Company responsibilities</h2>
+        <div class="card-grid account-facts-grid">
+          <article class="card account-detail-card account-company"><div class="card-body"><h3>Commercial agreements</h3><p>The Company is the agreement owner for its merchant setup.</p></div></article>
+          <article class="card account-detail-card account-company"><div class="card-body"><h3>Payouts</h3><p>The Company receives payouts associated with its payment agreements.</p></div></article>
+          <article class="card account-detail-card account-company"><div class="card-body"><h3>Store organization</h3><p>Can have one or many Stores directly beneath it, or organize Stores through optional Store Groups.</p></div></article>
+          <article class="card account-detail-card account-company"><div class="card-body"><h3>Operational scope</h3><p>Provides a Company-level context for operational responsibilities and user access, according to assigned roles and permissions.</p></div></article>
+        </div>
+        <aside class="callout">Payment services are connected at Store level. Explore <a href="services.html">Store channels and services</a>.</aside>
+      </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>
 </body>
