@@ -7,7 +7,7 @@
 </head>
 <body>
   <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
-    <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
+    <a class="sidebar-logo" href="index.html"><img src="https://design.swedbankpay.com/v/10.14.10/img/logo/swedbankpay-logo-v.svg" alt="Swedbank Pay" class="logotype-vertical logotype-sm"><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li><li class="nav-leaf"><a href="test-store-online.html">Test Store (Online)</a></li></ul></li>
@@ -19,7 +19,7 @@
   <div class="app-main">
     <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
     <main class="page-content" id="page-content">
-      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Customer Hierarchy</li></ol></nav>
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Customer Hierarchy</li></ol><div class="breadcrumb-actions"><button class="btn btn-primary hierarchy-present-button" id="open-hierarchy-presentation" type="button">Present this section</button></div></nav>
       <header class="page-intro">
         <span class="badge badge-yellow">Structure</span>
         <h1>Customer Hierarchy &amp; Accounts</h1>
@@ -70,5 +70,44 @@
       </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>
+  <dialog class="presentation-dialog" id="hierarchy-presentation" aria-labelledby="presentation-title">
+    <div class="presentation-shell">
+      <header class="presentation-header">
+        <div><span class="presentation-kicker">SECTION PRESENTATION</span><h2 id="presentation-title">Customer hierarchy</h2></div>
+        <button class="presentation-icon-button" id="close-presentation" type="button" aria-label="Close presentation">×</button>
+      </header>
+      <section class="presentation-setup" id="presentation-setup" aria-labelledby="presentation-setup-title">
+        <p class="presentation-intro" id="presentation-setup-title">A concise story from the purpose of the model to account setup and Store services.</p>
+        <div class="presentation-setup-grid">
+          <article class="presentation-choice presentation-recommended">
+            <span class="presentation-choice-label">RECOMMENDED</span>
+            <h3>Tell the complete story</h3>
+            <p>All prepared slides in a clear sequence, designed for a short introduction.</p>
+            <ol class="presentation-outline" id="recommended-outline"></ol>
+            <button class="btn btn-primary" id="start-recommended" type="button">Start recommended presentation</button>
+          </article>
+          <form class="presentation-choice presentation-custom" id="custom-presentation-form">
+            <span class="presentation-choice-label">CUSTOMIZE</span>
+            <h3>Choose the slides</h3>
+            <p>Keep only the slides you need. Each slide includes its own context and takeaway.</p>
+            <fieldset class="presentation-slide-options"><legend class="sr-only">Select slides for a custom presentation</legend><div id="presentation-slide-options"></div></fieldset>
+            <button class="btn btn-secondary" id="start-custom" type="submit">Present selected slides</button>
+            <p class="presentation-validation" id="presentation-validation" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+      <section class="presentation-player" id="presentation-player" aria-label="Slide presentation" hidden>
+        <div class="presentation-player-top"><span id="presentation-source"></span><span class="presentation-player-status" id="presentation-player-status" role="status" aria-live="polite"></span><button class="presentation-fullscreen-button" id="presentation-fullscreen" type="button">Enter fullscreen</button></div>
+        <div class="presentation-slide-stage" id="presentation-slide-stage" aria-live="polite"></div>
+        <footer class="presentation-controls">
+          <button class="btn btn-secondary" id="presentation-previous" type="button">Previous</button>
+          <div class="presentation-progress"><span id="presentation-slide-count"></span><div class="presentation-progress-track"><span id="presentation-progress-fill"></span></div></div>
+          <button class="btn btn-primary" id="presentation-next" type="button">Next</button>
+          <button class="presentation-back-button" id="presentation-back-to-setup" type="button">Choose slides</button>
+        </footer>
+      </section>
+    </div>
+  </dialog>
+  <script src="presentation.js" defer></script>
 </body>
 </html>

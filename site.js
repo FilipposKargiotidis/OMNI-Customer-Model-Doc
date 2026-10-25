@@ -8,6 +8,10 @@
   const emptyState = document.getElementById("empty-state");
   const currentPage = location.pathname.split("/").pop() || "index.html";
   const breadcrumbNav = document.querySelector('nav[aria-label="Breadcrumb"]');
+  let breadcrumbActions = breadcrumbNav?.querySelector(".breadcrumb-actions");
+  const topbar = document.querySelector(".topbar");
+  const sidebarBrand = sidebar.querySelector(".sidebar-logo");
+  const menuIcon = '<svg aria-hidden="true" viewBox="-32 -32 1088 1088" focusable="false"><g transform="translate(0, 960) scale(1, -1)"><path d="M1024 827.363h-1024v66.783h1024zM1024 400.844h-1024v66.783h1024zM1024-25.674h-1024v66.783h1024z"/></g></svg>';
   const pageSearchTerms = {
     "index.html": "overview customer model merchant portal accounts services partners access",
     "why-this-matters.html": "customer model organization complexity access users services hierarchy",
@@ -26,6 +30,18 @@
     "user-roles.html": "external user roles administrator finance support technical reader access permissions",
     "role-permission-matrix.html": "role permission matrix administrator finance support technical reader scoped access"
   };
+
+  if (breadcrumbNav && !breadcrumbActions) {
+    breadcrumbActions = document.createElement("div");
+    breadcrumbActions.className = "breadcrumb-actions";
+    breadcrumbNav.append(breadcrumbActions);
+  }
+
+  if (topbar && sidebarBrand) {
+    const mobileBrand = sidebarBrand.cloneNode(true);
+    mobileBrand.classList.replace("sidebar-logo", "mobile-brand");
+    topbar.prepend(mobileBrand);
+  }
 
   if (breadcrumbNav) {
     const copyLinkButton = document.createElement("button");
@@ -66,14 +82,20 @@
     }
 
     copyLinkButton.addEventListener("click", copyPageLink);
-    breadcrumbNav.append(copyLinkButton, copyStatus);
+    breadcrumbActions.append(copyLinkButton, copyStatus);
   }
 
   function setMenuOpen(open) {
     sidebar.classList.toggle("open", open);
     overlay.classList.toggle("visible", open);
     menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    menuToggle.title = open ? "Close navigation" : "Open navigation";
   }
+
+  menuToggle.innerHTML = menuIcon;
+  menuToggle.setAttribute("aria-label", "Open navigation");
+  menuToggle.title = "Open navigation";
 
   navLinks.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
