@@ -40,7 +40,13 @@ The site is published with GitHub Pages. A GitHub Actions workflow deploys the r
 - `*.html` — Individual topic pages
 - `styles.css` — Shared layout and visual styles
 - `site.js` — Shared navigation and search behavior
+- `presentation.js` — Customer Hierarchy presentation slide content and behavior
+- `docs/site-features.md` — Feature overview and maintenance guide
 - `.github/workflows/pages.yml` — GitHub Pages deployment workflow
+
+## Feature documentation
+
+The implementation and maintenance notes for the shared site features and the Customer Hierarchy presentation are in [docs/site-features.md](docs/site-features.md).
 
 ## Contributing
 
