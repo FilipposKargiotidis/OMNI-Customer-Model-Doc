@@ -10,7 +10,7 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li><li class="nav-leaf"><a href="test-store-online.html">Test Store (Online)</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
@@ -42,6 +42,31 @@
           </div>
         </div>
         <aside class="callout">Each Store has one channel—Online or In-store—and may have a combination of services that fits its agreements and configuration. A Company may have Stores directly under it, Stores organized into Store Groups, or both. <a href="services.html">Explore channels and services</a>.</aside>
+      </section>
+      <section class="page-section">
+        <h2>How customer accounts are created</h2>
+        <p class="section-lead">Account creation depends on the account type. Standard account setup is handled by internal Owner OMNI users; Corporations and special access groups require Development-team setup.</p>
+        <div class="account-provisioning-grid">
+          <article class="account-provisioning-card account-provisioning-owner">
+            <span class="account-provisioning-label">STANDARD INTERNAL SETUP</span>
+            <h3>Created by Owner OMNI users</h3>
+            <p>Internal users with Owner OMNI access can create Partner accounts and Company parent accounts. Under these accounts, they can create Groups, Stores and Test Stores.</p>
+            <div class="account-provisioning-flow" aria-label="Owner OMNI users create Partner or Company accounts, then create Groups, Stores, and Test Stores">
+              <span class="account-provisioning-node">Owner OMNI user</span><span class="account-provisioning-arrow" aria-hidden="true">→</span><span class="account-provisioning-node">Partner or Company</span><span class="account-provisioning-arrow" aria-hidden="true">→</span><span class="account-provisioning-node">Groups, Stores, Test Stores</span>
+            </div>
+            <p class="account-provisioning-note"><strong>Group membership:</strong> A Group can be assigned Stores that were created under Company accounts. The Group organizes those Stores; it does not replace their Company parent.</p>
+          </article>
+          <article class="account-provisioning-card account-provisioning-development">
+            <span class="account-provisioning-label">SPECIALIST SETUP</span>
+            <h3>Created by the Development team</h3>
+            <p>Corporations and special access groups are set up by the Development team. This is used when a Partner, customer or service needs account capabilities or configuration outside the standard account-creation flows.</p>
+            <div class="account-provisioning-special">
+              <span class="account-provisioning-tag">Corporations</span>
+              <span class="account-provisioning-tag">Special access groups</span>
+            </div>
+          </article>
+        </div>
+        <aside class="callout">A Partner account is separate from the Corporation–Company–Store customer hierarchy. A special access group is also distinct from the optional Store Group account level. See <a href="partner.html">Partner accounts</a>, <a href="group.html">Store Groups</a> and <a href="Ecom-Corp-Access-groups.html">EcomCorp access groups</a>.</aside>
       </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>

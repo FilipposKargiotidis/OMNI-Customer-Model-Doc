@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Online Test Store concept and proposed eCommerce testing capabilities."><title>Test Store (Online) | OMNI Customer Model</title>
+  <link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar app-sidebar" id="sidebar" aria-label="Documentation sidebar">
+    <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
+    <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
+      <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li><li class="nav-leaf"><a href="test-store-online.html" aria-current="page">Test Store (Online)</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
+    </ul></nav>
+  </aside>
+  <button class="mobile-overlay" id="mobile-overlay" type="button" aria-label="Close navigation"></button>
+  <div class="app-main">
+    <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
+    <main class="page-content" id="page-content">
+      <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li><a href="store.html">Store</a></li><li aria-current="page">Test Store (Online)</li></ol></nav>
+      <header class="page-intro"><span class="badge badge-yellow">Customer account for testing PSPs</span><h1>Test Store (Online)</h1><p>Test Stores support customer integration work for Pay online services, allowing eCommerce flows to be exercised without processing live customer payments.</p></header>
+      <section class="page-section">
+        <h2>How Test Stores work</h2>
+        <p class="section-lead">Test Stores are currently used internally to support testing of Pay online services.</p>
+        <article class="test-store-intro">
+          <div class="test-store-heading"><span class="test-store-mark" aria-hidden="true">TEST</span><div><span class="test-store-kicker">ENVIRONMENT BOUNDARY</span><h3>Portal setup, simulated transactions</h3></div></div>
+          <p>Test Store setup is handled internally in the production Merchant Portal. Transactions use the ECOM external integration and are simulated for testing; they are not live customer payments.</p>
+        </article>
+      </section>
+      <section class="page-section">
+        <h2>Capabilities that exist today</h2>
+        <p class="section-lead">The current internal setup supports testing with simulated transactions. Creating an Online Test Store automatically creates its Pay online contract; the internal integration team then configures the payment methods to be tested. This is not yet a self-service capability for external customers.</p>
+        <div class="test-store-current-grid">
+          <article class="test-store-current-card test-store-current-setup"><span class="test-store-current-status">Available internally</span><h3>Internal Test Store setup</h3><p>Internal teams can set up Test Stores through the production Merchant Portal.</p></article>
+          <article class="test-store-current-card test-store-current-contract"><span class="test-store-current-status">Created automatically</span><h3>Pay online contract</h3><p>When an Online Test Store is created, its Pay online contract is created automatically.</p></article>
+          <article class="test-store-current-card test-store-current-methods"><span class="test-store-current-status">Manual internal step</span><h3>Payment method configuration</h3><p>The internal integration team configures which payment methods are available for testing on the Test Store.</p></article>
+          <article class="test-store-current-card test-store-current-transactions"><span class="test-store-current-status">Test transactions</span><h3>ECOM external integration</h3><p>Transactions generated for a Test Store are simulated through the ECOM external integration and are not live payments.</p></article>
+          <article class="test-store-current-card test-store-current-scm"><span class="test-store-current-status">Implemented</span><h3>SCM and Search</h3><p>Test Stores are supported in SCM and Search, including Store operations, indexing, and retrieval.</p></article>
+          <article class="test-store-current-card test-store-current-api"><span class="test-store-current-status">Implemented</span><h3>Customer API test mode</h3><p>The Customer API supports test-mode behavior for Test Stores, allowing test requests and responses to be validated without treating transactions as live payments.</p></article>
+        </div>
+      </section>
+      <section class="page-section">
+        <h2>Further capabilities to explore</h2>
+        <p class="section-lead">The following customer-facing capabilities remain in the proposed scope; they should not be read as already available to customers.</p>
+        <div class="test-store-grid">
+          <article class="test-store-card test-store-setup"><span class="test-store-number">01</span><h3>Customer Test Store setup</h3><p>Customer-facing Test Store creation and management have not been developed or made available yet. The future goal is to provide customers with a clear, seamless self-service setup experience.</p><span class="test-store-area">Not developed · not available to customers</span></article>
+        </div>
+      </section>
+    </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
+  </div>
+</body>
+</html>

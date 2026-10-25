@@ -10,7 +10,7 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li><li class="nav-leaf"><a href="test-store-online.html">Test Store (Online)</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
@@ -21,7 +21,28 @@
     <main class="page-content" id="page-content">
       <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">Access Inheritance</li></ol></nav>
       <header class="page-intro"><span class="badge badge-yellow">Access management</span><h1>Access Inheritance</h1><p>How user access may extend across the customer hierarchy.</p></header>
-      <section class="page-section"><h2>Access Principle</h2><article class="card card-primary"><div class="card-body"><p>Users assigned higher in the hierarchy may gain access to lower hierarchy levels depending on permission rules. An optional Store Group can scope access to the Stores within that Store Group.</p><div class="access-flow" aria-label="Corporation to Company to optional Store Group to Store"><span class="badge badge-yellow">Corporation</span><span class="access-arrow" aria-hidden="true">→</span><span class="badge badge-yellow">Company</span><span class="access-arrow" aria-hidden="true">→</span><span class="badge badge-yellow">Store Group (optional)</span><span class="access-arrow" aria-hidden="true">→</span><span class="badge badge-yellow">Store</span></div><aside class="callout">Access inheritance depends on assigned permissions and scope; Store Group users can be limited to the Stores in their Store Group.</aside></div></article></section>
+      <section class="page-section">
+        <h2>Access follows hierarchy and permissions</h2>
+        <p class="section-lead">A user's account placement provides an organizational context for access. Permission rules determine whether that access can extend to lower levels.</p>
+        <div class="inheritance-flow" aria-label="Corporation to Company to optional Store Group to Store">
+          <article class="inheritance-level inheritance-corporation"><span class="inheritance-level-index">LEVEL 1</span><h3>Corporation</h3><p>Top-level account</p></article>
+          <span class="inheritance-arrow" aria-hidden="true">→</span>
+          <article class="inheritance-level inheritance-company"><span class="inheritance-level-index">LEVEL 2</span><h3>Company</h3><p>Legal entity account</p></article>
+          <span class="inheritance-arrow" aria-hidden="true">→</span>
+          <article class="inheritance-level inheritance-group"><span class="inheritance-level-index">OPTIONAL</span><h3>Store Group</h3><p>Scoped Store collection</p></article>
+          <span class="inheritance-arrow" aria-hidden="true">→</span>
+          <article class="inheritance-level inheritance-store"><span class="inheritance-level-index">LEVEL 4</span><h3>Store</h3><p>Operational account</p></article>
+        </div>
+      </section>
+      <section class="page-section">
+        <h2>What this means for access</h2>
+        <div class="inheritance-guidance-grid">
+          <article class="inheritance-guidance inheritance-broad"><span class="inheritance-guidance-mark" aria-hidden="true">↓</span><div><h3>Access may extend downward</h3><p>Users assigned higher in the hierarchy may gain access to lower hierarchy levels, depending on the applicable permission rules.</p></div></article>
+          <article class="inheritance-guidance inheritance-scoped"><span class="inheritance-guidance-mark" aria-hidden="true">◎</span><div><h3>Store Groups can narrow scope</h3><p>An optional Store Group can limit a user's access to the Stores within that Store Group.</p></div></article>
+        </div>
+        <aside class="callout">Hierarchy placement alone does not define every permission. Effective access depends on assigned permissions and scope.</aside>
+        <p class="account-access-links"><a href="customer-hierarchy.html">Review the customer hierarchy</a> · <a href="user-roles.html">Explore user roles</a> · <a href="role-permission-matrix.html">View the role permission matrix</a></p>
+      </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>
 </body>

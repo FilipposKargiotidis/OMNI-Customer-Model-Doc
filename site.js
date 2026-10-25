@@ -7,6 +7,67 @@
   const navGroups = Array.from(document.querySelectorAll(".nav-group"));
   const emptyState = document.getElementById("empty-state");
   const currentPage = location.pathname.split("/").pop() || "index.html";
+  const breadcrumbNav = document.querySelector('nav[aria-label="Breadcrumb"]');
+  const pageSearchTerms = {
+    "index.html": "overview customer model merchant portal accounts services partners access",
+    "why-this-matters.html": "customer model organization complexity access users services hierarchy",
+    "customer-hierarchy.html": "hierarchy corporation company store group partner account owner omni provisioning users PSP pay online acquiring settlement reports invoices",
+    "services.html": "channels online in-store PSP pay online payment processing pay by link acquiring card terminal payment methods APM QR code TMS settlement reports invoicing",
+    "corporation.html": "customer account enterprise organization companies users access hierarchy",
+    "company.html": "customer account legal entity agreements payouts stores users access hierarchy",
+    "group.html": "optional customer account store group organize stores region brand department scoped access",
+    "store.html": "customer account online in-store payments PSP pay online acquiring terminal pay by link settlement reports invoices services",
+    "test-store-online.html": "customer account testing PSP online pay online ECOM simulated transactions integration payment methods SCM search customer API",
+    "partner.html": "partner account agreement companies access groups subtype sales portal users",
+    "partner-sub-types.html": "partner subtypes executive platform integration technical referral access concepts",
+    "Ecom-Corp-Access-groups.html": "EcomCorp access group partner online stores transaction operations reports invoices user administration",
+    "IMS-GroupAccess-groups.html": "ImsGroup legacy acquiring access ID company organization number stores PSP services acquiring-only",
+    "access-inheritance.html": "access inheritance corporation company store group store users scope permissions",
+    "user-roles.html": "external user roles administrator finance support technical reader access permissions",
+    "role-permission-matrix.html": "role permission matrix administrator finance support technical reader scoped access"
+  };
+
+  if (breadcrumbNav) {
+    const copyLinkButton = document.createElement("button");
+    copyLinkButton.className = "copy-page-link";
+    copyLinkButton.type = "button";
+    copyLinkButton.setAttribute("aria-label", "Copy link to this page");
+    copyLinkButton.title = "Copy link to this page";
+    copyLinkButton.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3A5 5 0 0 0 13 2.93l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3A5 5 0 0 0 11 21.07l1.71-1.71"/></svg>';
+
+    const copyStatus = document.createElement("span");
+    copyStatus.className = "copy-page-link-status";
+    copyStatus.setAttribute("role", "status");
+    copyStatus.setAttribute("aria-live", "polite");
+
+    async function copyPageLink() {
+      const pageUrl = window.location.href;
+
+      try {
+        if (!navigator.clipboard || !navigator.clipboard.writeText) {
+          throw new Error("Clipboard API is unavailable");
+        }
+        await navigator.clipboard.writeText(pageUrl);
+        copyStatus.textContent = "Link copied";
+      } catch {
+        const fallback = document.createElement("textarea");
+        fallback.value = pageUrl;
+        fallback.setAttribute("readonly", "");
+        fallback.style.position = "fixed";
+        fallback.style.opacity = "0";
+        document.body.appendChild(fallback);
+        fallback.select();
+        const copied = document.execCommand("copy");
+        fallback.remove();
+        copyStatus.textContent = copied
+          ? "Link copied"
+          : "Could not copy link. Copy the URL from the address bar.";
+      }
+    }
+
+    copyLinkButton.addEventListener("click", copyPageLink);
+    breadcrumbNav.append(copyLinkButton, copyStatus);
+  }
 
   function setMenuOpen(open) {
     sidebar.classList.toggle("open", open);
@@ -29,9 +90,12 @@
 
   search.addEventListener("input", () => {
     const query = search.value.trim().toLocaleLowerCase();
+    const queryTerms = query.split(/\s+/).filter(Boolean);
     let matches = 0;
     navLinks.forEach(link => {
-      const visible = !query || link.textContent.toLocaleLowerCase().includes(query);
+      const page = link.getAttribute("href");
+      const searchableText = `${link.textContent} ${pageSearchTerms[page] || ""}`.toLocaleLowerCase();
+      const visible = queryTerms.length === 0 || queryTerms.every(term => searchableText.includes(term));
       link.closest(".nav-leaf").hidden = !visible;
       if (visible) matches += 1;
     });

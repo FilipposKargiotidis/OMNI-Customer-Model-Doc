@@ -10,8 +10,8 @@
     <a class="sidebar-logo" href="index.html"><span class="logo-mark" aria-hidden="true">O</span><span>OMNI Customer Model</span></a><div class="sidebar-caption">Merchant Portal</div>
     <nav class="sidebar-nav" aria-label="Documentation sections"><ul>
       <li class="nav-group"><div class="nav-group-heading">Customer model</div><ul><li class="nav-leaf"><a href="index.html">Overview</a></li><li class="nav-leaf"><a href="why-this-matters.html">Why this matters</a></li><li class="nav-leaf"><a href="customer-hierarchy.html">Customer hierarchy</a></li><li class="nav-leaf"><a href="services.html">Services</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li></ul></li>
-      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html">ImsGroup Access groups</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Customer Accounts</div><ul><li class="nav-leaf"><a href="corporation.html">Corporation</a></li><li class="nav-leaf"><a href="company.html">Company</a></li><li class="nav-leaf"><a href="group.html">Store Group (optional)</a></li><li class="nav-leaf"><a href="store.html">Store</a></li><li class="nav-leaf"><a href="test-store-online.html">Test Store (Online)</a></li></ul></li>
+      <li class="nav-group"><div class="nav-group-heading">Partner &amp; Access Groups</div><ul><li class="nav-leaf"><a href="partner.html">Partner accounts</a></li><li class="nav-leaf"><a href="partner-sub-types.html">Partner Sub types</a></li><li class="nav-leaf"><a href="Ecom-Corp-Access-groups.html">EcomCorp Access groups</a></li><li class="nav-leaf"><a href="IMS-GroupAccess-groups.html" aria-current="page">ImsGroup Access groups</a></li></ul></li>
       <li class="nav-group"><div class="nav-group-heading">Access management</div><ul><li class="nav-leaf"><a href="access-inheritance.html">Access inheritance</a></li><li class="nav-leaf"><a href="user-roles.html">User roles</a></li><li class="nav-leaf"><a href="role-permission-matrix.html">Role permission matrix</a></li></ul></li>
     </ul></nav>
   </aside>
@@ -20,8 +20,52 @@
     <header class="topbar"><button class="btn btn-secondary btn-sm menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">Menu</button><span class="topbar-context">Documentation / OMNI Customer Model</span><label class="search-wrap"><span class="sr-only">Find a topic in this documentation</span><span class="search-icon" aria-hidden="true">⌕</span><input class="search-input" id="doc-search" type="search" placeholder="Find a topic"></label></header>
     <main class="page-content" id="page-content">
       <nav aria-label="Breadcrumb"><ol class="breadcrumb breadcrumbs"><li><a href="index.html">Merchant Portal</a></li><li aria-current="page">ImsGroup Access groups</li></ol></nav>
-      <header class="page-intro"><span class="badge badge-yellow">Partner &amp; Access Groups</span><h1>ImsGroup Access groups</h1><p>This page is ready for ImsGroup Access groups content.</p></header>
-      <section class="page-section"><h2>Access group details</h2><article class="card card-secondary"><div class="card-body"><p>Add the ImsGroup access group descriptions and details here.</p></div></article></section>
+      <header class="page-intro"><span class="badge badge-yellow">Legacy acquiring access model</span><h1>ImsGroup Access groups</h1><p>ImsGroup is a grouping concept carried forward from the former Acquiring Merchant Portal. It brought together acquiring Access IDs associated with the same Company and organisation number, supporting access to acquiring Stores—with or without PSP services.</p></header>
+      <section class="page-section">
+        <h2>Why ImsGroups were used</h2>
+        <p class="section-lead">A Company and organisation number could be associated with one or several Acquiring Access IDs in the previous portal. ImsGroup provided a way to group Stores connected to multiple IDs under the same customer context.</p>
+        <div class="imsgroup-flow" aria-label="A Company and organisation number link to one or more Acquiring Access IDs, which are grouped in an ImsGroup when there are multiple IDs">
+          <article class="imsgroup-flow-card imsgroup-company"><span class="imsgroup-kicker">CUSTOMER CONTEXT</span><h3>Company</h3><p>Identified by its organisation number.</p></article>
+          <span class="imsgroup-arrow" aria-hidden="true">→</span>
+          <article class="imsgroup-flow-card imsgroup-ids"><span class="imsgroup-kicker">LEGACY ACQUIRING</span><h3>Acquiring Access IDs</h3><p>One or more IDs could be linked to the Company and organisation number.</p></article>
+          <span class="imsgroup-arrow" aria-hidden="true">→</span>
+          <article class="imsgroup-flow-card imsgroup-group"><span class="imsgroup-kicker">GROUPING WHEN NEEDED</span><h3>ImsGroup</h3><p>Grouped Stores across multiple Access IDs for a shared customer context.</p></article>
+        </div>
+      </section>
+      <section class="page-section">
+        <h2>When was an ImsGroup needed?</h2>
+        <div class="imsgroup-scenario-grid">
+          <article class="imsgroup-scenario imsgroup-multiple">
+            <span class="imsgroup-status">Multiple Access IDs</span>
+            <h3>ImsGroup created</h3>
+            <p>When a Company and organisation number were linked to more than one Acquiring Access ID, an ImsGroup was created automatically to group the related Stores.</p>
+            <div class="imsgroup-id-list" aria-label="Multiple Access IDs grouped under one ImsGroup"><span>Access ID A</span><span>Access ID B</span><span>Access ID C</span></div>
+          </article>
+          <article class="imsgroup-scenario imsgroup-single">
+            <span class="imsgroup-status">One Access ID</span>
+            <h3>No ImsGroup required</h3>
+            <p>When there was only one Acquiring Access ID for the Company and organisation number, acquiring Stores could be added directly under the customer. A separate ImsGroup was not needed.</p>
+            <div class="imsgroup-single-path"><span>Company</span><span aria-hidden="true">→</span><span>Acquiring Stores</span></div>
+          </article>
+        </div>
+        <aside class="callout">The group represented a way to organize the acquiring access structure; it did not create another legal entity or replace the Company account.</aside>
+      </section>
+      <section class="page-section">
+        <h2>Acquiring Stores, with or without PSP</h2>
+        <p class="section-lead">ImsGroups supported both acquiring-only setups and Stores that combined acquiring with PSP services.</p>
+        <div class="imsgroup-capability-grid">
+          <article class="imsgroup-capability imsgroup-acquiring"><span class="imsgroup-capability-label">ACQUIRING</span><h3>Acquiring-only Stores</h3><p>Group Stores that used acquiring services without a PSP service.</p></article>
+          <article class="imsgroup-capability imsgroup-combined"><span class="imsgroup-capability-label">ACQUIRING + PSP</span><h3>Combined service Stores</h3><p>For Stores with both acquiring and PSP services, the ImsGroup supported displaying data from both service contexts.</p></article>
+        </div>
+        <aside class="callout">ImsGroup is distinct from the optional Store Group in the current customer hierarchy. A Store Group organizes Stores under a Company; ImsGroup relates to the legacy acquiring Access ID structure.</aside>
+      </section>
+      <section class="page-section">
+        <h2>Related concepts</h2>
+        <div class="card-grid ecomcorp-links">
+          <article class="card ecomcorp-link-card"><div class="card-body"><h3>Customer hierarchy</h3><p>Review how Company and Store accounts relate in the customer model.</p><a href="customer-hierarchy.html">Explore the customer hierarchy</a></div></article>
+          <article class="card ecomcorp-link-card"><div class="card-body"><h3>Store Group</h3><p>Learn about the optional current account level used to organize a Company’s Stores.</p><a href="group.html">Explore Store Groups</a></div></article>
+        </div>
+      </section>
     </main><p class="empty-state" id="empty-state" role="status">No navigation topics match your search.</p>
   </div>
 </body>
