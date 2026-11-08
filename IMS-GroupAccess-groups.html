@@ -60,6 +60,59 @@
         <aside class="callout">ImsGroup is distinct from the optional Store Group in the current customer hierarchy. A Store Group organizes Stores under a Company; ImsGroup relates to the legacy acquiring Access ID structure.</aside>
       </section>
       <section class="page-section">
+        <h2>How the current IMS import uses Access IDs</h2>
+        <p class="section-lead">The import distinguishes Companies by the number of Access IDs and treats Partner-related Access IDs as a separate case.</p>
+        <div class="imsgroup-scenario-grid">
+          <article class="imsgroup-scenario imsgroup-multiple">
+            <span class="imsgroup-status">Company · Multiple Access IDs</span>
+            <h3>One ImsGroup per Access ID</h3>
+            <p>Each Access ID is represented by an ImsGroup owned by the Company. Users are assigned to the ImsGroups rather than directly to the Company. This keeps the Company’s parent relationship intact; the ImsGroups are not owned by a parent Corporation.</p>
+          </article>
+          <article class="imsgroup-scenario imsgroup-single">
+            <span class="imsgroup-status">Company · Single Access ID</span>
+            <h3>Attach it to the Company</h3>
+            <p>The Access ID is attached directly to the Company. No ImsGroup is introduced when it would add no useful grouping level.</p>
+          </article>
+          <article class="imsgroup-scenario imsgroup-acquiring">
+            <span class="imsgroup-status">Partner branch</span>
+            <h3>Partner Access IDs are handled separately</h3>
+            <p>The import cannot reliably infer which Partner owns an Access ID, so it initially places it under the Swp Ims Partner. A manually corrected placement is then preserved. A Partner that also acts as a merchant gets a Company under the Partner; its Access ID is placed at that Company, not in an ImsGroup.</p>
+          </article>
+        </div>
+      </section>
+      <section class="page-section">
+        <h2>Ownership, manual changes and deactivated Stores</h2>
+        <div class="imsgroup-scenario-grid">
+          <article class="imsgroup-scenario imsgroup-multiple">
+            <h3>Org. No. determines Store ownership</h3>
+            <p>The Org. No. supplied by IMS is the source of truth for a merchant Store’s ownership. If it changes in IMS, the import can move the Store. Moving the Store only in the portal does not override IMS; a later import can put it back.</p>
+          </article>
+          <article class="imsgroup-scenario imsgroup-single">
+            <h3>Manual Partner placement is respected</h3>
+            <p>Once Setup or Support moves a Partner Access ID to its intended Partner, the import keeps that placement. It does not choose an existing Company under a Partner based on its name or apparent fit. To target an existing Company, place the Access ID there once.</p>
+          </article>
+          <article class="imsgroup-scenario imsgroup-acquiring">
+            <h3>Deactivated Stores are detached, not deleted</h3>
+            <p>When IMS deactivates a Store, the import detaches it from its Access ID and stops making access decisions about it, but retains the Store in the portal. Deactivation can be reversed, allowing the same Store to return if it is reactivated.</p>
+          </article>
+        </div>
+      </section>
+      <section class="page-section">
+        <h2>Settlement and import discrepancies</h2>
+        <div class="imsgroup-scenario-grid">
+          <article class="imsgroup-scenario imsgroup-single">
+            <h3>Client fund status follows settlement</h3>
+            <p>Whether a merchant settles as a client fund depends on which account receives the settlement, not only on the IMS Access ID flag. If only some merchants on an Access ID settle through Swedbank Pay, that may be an in-progress migration; the import notes the difference but does not change the Access ID placement.</p>
+            <p><strong>Product question:</strong> IMS fee visibility may not reflect the flat percentage charged for client-fund settlement. The import does not currently restrict that visibility.</p>
+          </article>
+          <article class="imsgroup-scenario imsgroup-multiple">
+            <h3>Allow the import queue to resolve differences</h3>
+            <p>Messages are processed one merchant at a time, so an apparent mismatch may resolve when outstanding messages finish. The import waits, then requests a resend for discrepancies that remain. Repeated failures may be set aside rather than retried indefinitely; those cases need human investigation. A later normal import automatically picks a set-aside merchant back up.</p>
+          </article>
+        </div>
+        <aside class="callout">For operational cases, distinguish portal access placement from merchant ownership: the portal manages access structure, while IMS data—including Org. No.—determines Store ownership. See the <a href="https://github.com/SwedbankPay/mx-customers/blob/main/docs/ims-import-rules-and-considerations.md">full IMS import rules and considerations</a>.</aside>
+      </section>
+      <section class="page-section">
         <h2>Related concepts</h2>
         <div class="card-grid ecomcorp-links">
           <article class="card ecomcorp-link-card"><div class="card-body"><h3>Customer hierarchy</h3><p>Review how Company and Store accounts relate in the customer model.</p><a href="customer-hierarchy.html">Explore the customer hierarchy</a></div></article>
