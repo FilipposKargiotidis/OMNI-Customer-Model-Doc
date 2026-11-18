@@ -420,8 +420,7 @@ nav[aria-label="Breadcrumb"] .breadcrumbs { min-width: 0; flex: 1; }
 .presentation-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.6rem; border-bottom: 1px solid var(--brand-secondary-light-3, #d4c4bc); background: var(--white, #fff); }
 .presentation-kicker, .presentation-choice-label { color: #765900; font-size: .7rem; font-weight: 700; letter-spacing: .09em; }
 .presentation-header h2 { margin: .2rem 0 0; font-size: 1.3rem; }
-.presentation-icon-button { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; border: 1px solid var(--brand-secondary-light-3, #d4c4bc); border-radius: 50%; background: var(--white, #fff); color: var(--text-default, #2f2424); font-size: 1.6rem; line-height: 1; cursor: pointer; }
-.presentation-icon-button:hover { background: #f0f0f0; }
+.presentation-close-button { flex: 0 0 auto; }
 .presentation-setup { overflow-y: auto; padding: 1.5rem; }
 .presentation-intro { max-width: 700px; margin: 0 0 1.25rem; color: var(--text-muted, #72605e); }
 .presentation-setup-grid { display: grid; grid-template-columns: .85fr 1.15fr; align-items: stretch; gap: 1rem; }
@@ -442,8 +441,6 @@ nav[aria-label="Breadcrumb"] .breadcrumbs { min-width: 0; flex: 1; }
 .presentation-player { display: flex; min-height: 0; flex: 1; flex-direction: column; }
 .presentation-player-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .75rem 1.6rem; color: var(--text-muted, #72605e); font-size: .82rem; }
 .presentation-player-status { flex: 1; color: #a12727; text-align: center; }
-.presentation-fullscreen-button, .presentation-back-button { padding: .45rem .7rem; border: 1px solid var(--brand-secondary-light-3, #d4c4bc); border-radius: .25rem; background: var(--white, #fff); color: var(--text-default, #2f2424); cursor: pointer; }
-.presentation-fullscreen-button:hover, .presentation-back-button:hover { background: #f0f0f0; }
 .presentation-slide-stage { display: grid; min-height: 0; flex: 1; place-items: center; padding: .75rem 1.6rem 1.25rem; overflow-y: auto; }
 .presentation-slide-content { width: min(100%, 880px); margin: auto; opacity: 0; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
 .presentation-slide-content.is-visible { opacity: 1; transform: translateY(0); }
@@ -490,6 +487,25 @@ nav[aria-label="Breadcrumb"] .breadcrumbs { min-width: 0; flex: 1; }
 .presentation-channel-label { display: inline-flex; padding: .25rem .6rem; border: 1px solid var(--service-accent); border-radius: 999px; background: rgba(255, 255, 255, .8); color: var(--service-accent); font-size: .7rem; font-weight: 700; }
 .presentation-example-services { display: grid; gap: .35rem; margin: .65rem 0 0; padding-left: 1.1rem; font-size: .82rem; line-height: 1.4; }
 .presentation-example-note { grid-column: 1 / -1; }
+.presentation-account-roles-visual, .presentation-account-access-visual, .presentation-test-store-visual { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.presentation-account-role { display: grid; min-height: 6rem; align-content: center; gap: .35rem; padding: 1rem; border: 1px solid var(--account-accent); border-top: .25rem solid var(--account-accent); border-radius: .35rem; background: var(--account-tint); }
+.presentation-account-role strong { font-size: 1rem; }
+.presentation-account-role span { color: var(--text-muted, #72605e); font-size: .82rem; line-height: 1.4; }
+.presentation-company-visual { display: grid; justify-items: center; gap: .65rem; }
+.presentation-company-stores { display: grid; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.presentation-account-route-visual { display: grid; justify-items: center; gap: .45rem; }
+.presentation-account-route-visual .presentation-hierarchy-node { width: min(100%, 24rem); }
+.presentation-completed-routes-visual { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.presentation-completed-route { display: grid; min-width: 0; justify-items: center; gap: .4rem; padding: .8rem; border: 1px solid #cfc5c0; border-radius: .35rem; background: rgba(255, 255, 255, .65); }
+.presentation-completed-route .presentation-hierarchy-node { width: 100%; min-width: 0; }
+.presentation-completed-route .presentation-route-label { min-height: 2em; }
+.presentation-account-access-row { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: .25rem; padding: .75rem; border: 1px solid var(--account-accent); border-left: .25rem solid var(--account-accent); border-radius: .3rem; background: var(--account-tint); }
+.presentation-account-access-row strong { color: var(--account-accent); font-size: .85rem; }
+.presentation-account-access-row span { color: var(--text-muted, #72605e); font-size: .75rem; line-height: 1.4; }
+.presentation-test-store-card { min-width: 0; padding: 1rem; border: 1px solid #cfc5c0; border-top: .25rem solid #176b87; border-radius: .35rem; background: #edf7f9; }
+.presentation-test-store-future { border-top-color: #7251a2; background: #f5f1fa; }
+.presentation-test-store-card h4 { margin: .5rem 0; font-size: 1rem; }
+.presentation-test-store-card p { margin: 0; color: var(--text-muted, #72605e); font-size: .82rem; line-height: 1.45; }
 .service-online { --service-accent: #176b87; --service-tint: #e8f4f7; }
 .service-instore { --service-accent: #28734f; --service-tint: #e9f4ed; }
 .presentation-takeaway { width: min(100%, 820px); margin: 1rem auto 0; padding: .8rem 1rem; border-left: .25rem solid var(--brand-primary, #fdc92a); border-radius: .2rem; background: #fff8e5; font-size: .88rem; font-weight: 700; line-height: 1.45; }
@@ -541,7 +557,7 @@ nav[aria-label="Breadcrumb"] .breadcrumbs { min-width: 0; flex: 1; }
   .presentation-dialog { width: 100vw; max-height: 100vh; height: 100vh; margin: 0; border-radius: 0; }
   .presentation-shell { min-height: 100vh; max-height: 100vh; }
   .presentation-header, .presentation-setup { padding: 1rem; }
-  .presentation-setup-grid, .presentation-context-visual, .presentation-creation-visual, .presentation-channels-visual, .presentation-examples-visual { grid-template-columns: 1fr; }
+  .presentation-setup-grid, .presentation-context-visual, .presentation-creation-visual, .presentation-channels-visual, .presentation-examples-visual, .presentation-account-roles-visual, .presentation-account-access-visual, .presentation-test-store-visual, .presentation-company-stores, .presentation-completed-routes-visual { grid-template-columns: 1fr; }
   .presentation-slide-stage { padding: .5rem 1rem 1rem; }
   .presentation-slide-heading { margin-bottom: 1rem; }
   .presentation-clarity-bar, .presentation-example-note { grid-column: auto; }
@@ -550,6 +566,7 @@ nav[aria-label="Breadcrumb"] .breadcrumbs { min-width: 0; flex: 1; }
   .presentation-controls .btn { padding: .45rem .65rem; }
   .presentation-player-top { padding: .65rem 1rem; }
   .presentation-hierarchy-routes { grid-template-columns: 1fr; }
+  .presentation-account-access-row { align-items: flex-start; }
   .presentation-hierarchy-top, .presentation-route-chain { width: 100%; }
   .presentation-hierarchy-top .presentation-hierarchy-node { min-width: 0; flex: 1; }
   .presentation-route-chain { align-items: stretch; flex-direction: column; }

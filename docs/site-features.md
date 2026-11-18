@@ -11,39 +11,35 @@ Every topic page includes `site.js` and `styles.css`.
 - **Copy-page-link control:** `site.js` adds a copy-link button to each page's breadcrumb action area. It uses the Clipboard API when available and a textarea fallback otherwise. Each page should have a `nav[aria-label="Breadcrumb"]`; the script creates the shared action container when one is not already in the HTML.
 - **Responsive presentation and documentation styling:** Shared components, diagrams, layout, and breakpoints are styled in `styles.css`. Keep page-specific structure in the relevant HTML page unless the styling is shared.
 
-## Customer Hierarchy presentation
+## Customer presentations
 
-The presentation pilot is available from the **Present this section** button on `customer-hierarchy.html`. Its parts are split by responsibility:
+The Customer Hierarchy presentation is available on `customer-hierarchy.html`. The Customer Accounts presentation is available from the Corporation page under Customer Accounts. Both use the same presentation setup and player behavior:
 
 - `customer-hierarchy.html` contains the dialog, setup screen, recommended outline, custom slide selection form, player controls, and script reference.
-- `presentation.js` contains the ordered slide content, visual builders, slide rendering, and presentation interactions.
+- `presentation.js` contains both ordered slide decks, visual builders, slide rendering, and presentation interactions.
 - `styles.css` contains the dialog, slide, visual, animation, and responsive presentation styles.
+
+The Customer Hierarchy deck explains why the model matters, how accounts relate, how setup works, and how Store channels and services fit together. The Customer Accounts deck focuses on the roles of Corporation, Company, optional Store Group, Store and Test Store, along with setup and access scope.
 
 ### Slide structure
 
-The recommended deck contains five slides:
+The recommended outline is generated from the currently selected deck. Both presentations also allow users to choose a non-empty custom slide selection.
 
-1. Why a shared customer model matters.
-2. Where account types sit in the hierarchy.
-3. Standard and specialist account-creation paths.
-4. Online and In-store channels and their services.
-5. Illustrative Store setups.
-
-Each slide has a title, explanatory context, a takeaway, a visual type, and a source label. This makes a selected slide understandable on its own while still allowing the recommended sequence to tell a connected story. The deck is intentionally an abstract introduction; it does not replace the detailed topic pages.
+Each slide has a title, explanatory context, a takeaway, a visual type, and a source label. This makes a selected slide understandable on its own while still allowing the recommended sequence to tell a connected story. The decks are introductions; they do not replace the detailed topic pages.
 
 ### How a slide is rendered
 
-In `presentation.js`, the `slides` array is the source of slide order and text. Each slide's `visual` value maps to a function in `visualBuilders`. Those functions create their markup using DOM elements and `textContent`; `renderSlide` combines the slide heading, visual, takeaway, source, and progress indicators.
+In `presentation.js`, the hierarchy and account deck arrays are the source of slide order and text. Each slide's `visual` value maps to a function in `visualBuilders`. Those functions create their markup using DOM elements and `textContent`; `renderSlide` combines the slide heading, visual, takeaway, source, and progress indicators.
 
 To add or revise a slide:
 
-1. Update or add its content in the `slides` array.
+1. Update or add its content in the appropriate deck array.
 2. Reuse an existing visual type when it communicates the idea clearly. If a new visual is needed, add a builder function and register it in `visualBuilders`.
 3. Keep the slide clear when shown by itself: include enough context and a useful takeaway, not just a label that depends on the previous slide.
 4. Update any related outline or presentation setup text in `customer-hierarchy.html` if the deck's purpose or controls change.
 5. Preview both the recommended deck and a custom selection, including narrow screens and reduced-motion settings.
 
-The outline and checkboxes are generated from `slides`. Custom selection follows the deck order, regardless of the order in which boxes are checked.
+The outline and checkboxes are generated from the selected deck. Custom selection follows the deck order, regardless of the order in which boxes are checked.
 
 ### Presentation behavior
 
@@ -58,6 +54,6 @@ When changing the dialog controls or their IDs, update the matching lookups and 
 
 ## Local review and publishing
 
-Open `index.html` directly in a browser or serve the repository with a local static web server. For the presentation, open `customer-hierarchy.html` and test the recommended and custom flows. Review desktop and mobile layouts before publishing.
+Open `index.html` directly in a browser or serve the repository with a local static web server. Open `customer-hierarchy.html` and `corporation.html` to test the recommended and custom flows for their respective decks, and verify that the design-guide secondary and icon buttons render correctly. Review desktop and mobile layouts before publishing.
 
 Pushing to `main` triggers the GitHub Pages workflow in `.github/workflows/pages.yml`. The workflow publishes the repository files as a static site.
