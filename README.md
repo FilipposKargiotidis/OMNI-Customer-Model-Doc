@@ -34,10 +34,31 @@ For a more representative local experience, you can serve the repository directo
 
 The site is published with GitHub Pages. A GitHub Actions workflow deploys the repository contents when changes are pushed to the `main` branch. The workflow can also be started manually from the repository’s **Actions** tab.
 
+## Product updates feed
+
+`release-notes.json` is the published data feed consumed by the Merchant Portal product-updates site. Add customer-facing release notes to this JSON array, then merge the change to `main`. The existing GitHub Pages workflow publishes the feed with the documentation site; the product-updates site displays the entries after that deployment completes.
+
+Each entry must have a unique lowercase, hyphen-separated `id`, a `date` in `YYYY-MM-DD` format, a `category`, `title`, `summary`, and a `tags` array of strings. The optional `details` field provides additional text for the expandable section. Keep this file limited to approved, customer-facing release information.
+
+```json
+[
+  {
+    "id": "orders-overview",
+    "date": "2026-11-18",
+    "category": "Orders",
+    "tags": ["NEW"],
+    "title": "A clearer view of your orders",
+    "summary": "A brief customer-facing overview of the change.",
+    "details": "Optional additional customer-facing context."
+  }
+]
+```
+
 ## Project structure
 
 - `index.html` — Documentation overview and navigation
 - `*.html` — Individual topic pages
+- `release-notes.json` — Customer-facing product updates feed
 - `styles.css` — Shared layout and visual styles
 - `site.js` — Shared navigation and search behavior
 - `presentation.js` — Customer Hierarchy presentation slide content and behavior
