@@ -1,6 +1,14 @@
 
  [
   {
+  "id": "payment-activity-review-test",
+  "date": "2026-11-23",
+  "category": "Payments",
+  "tags": ["IMPROVEMENT"],
+  "title": "Review payment activity more easily",
+  "summary": "A clearer activity view makes it easier to follow the status of a payment."
+  },
+  {
     "id": "slower-order-search",
     "date": "2026-11-22",
     "category": "Orders",
