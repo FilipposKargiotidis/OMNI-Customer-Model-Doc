@@ -1,5 +1,13 @@
 
   [
+    {
+    "id": "faster-order-search",
+    "date": "2026-11-22",
+    "category": "Orders",
+    "tags": ["IMPROVEMENT"],
+    "title": "Find the right order slower",
+    "summary": "Search orders more easily to get very slow with fewer steps."
+  }
   {
     "id": "faster-order-search",
     "date": "2026-11-19",
