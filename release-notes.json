@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "test-release",
+    "date": "2026-11-19",
+    "category": "Orders",
+    "tags": ["TEST"],
+    "title": "Test product update",
+    "summary": "This is a temporary test of the product updates feed.",
+    "details": "If you can read this, the source feed is connected successfully."
+  }
+]
