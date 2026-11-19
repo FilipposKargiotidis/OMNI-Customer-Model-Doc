@@ -1,2 +1,20 @@
-[
+
+  [
+  {
+    "id": "faster-order-search",
+    "date": "2026-11-19",
+    "category": "Orders",
+    "tags": ["IMPROVEMENT"],
+    "title": "Find the right order faster",
+    "summary": "Search orders more easily to get to the information you need with fewer steps."
+  },
+  {
+    "id": "clearer-payment-status",
+    "date": "2026-12-03",
+    "category": "Payments",
+    "tags": ["NEW"],
+    "title": "See payment status more clearly",
+    "summary": "Payment status is easier to identify when reviewing a transaction."
+  }
 ]
+
