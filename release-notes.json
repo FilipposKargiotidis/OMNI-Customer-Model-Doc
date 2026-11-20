@@ -2,6 +2,14 @@
  [
   {
   "id": "payment-activity-review-test",
+  "date": "2026-11-25",
+  "category": "Payments",
+  "tags": ["IMPROVEMENT"],
+  "title": "Review payment activity more harder",
+  "summary": "A clearer activity view makes it easier to follow the status of a payment."
+  },
+  {
+  "id": "payment-activity-review-test",
   "date": "2026-11-23",
   "category": "Payments",
   "tags": ["IMPROVEMENT"],
